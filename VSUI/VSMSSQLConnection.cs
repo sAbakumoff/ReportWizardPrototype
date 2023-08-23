@@ -90,8 +90,16 @@ namespace ReportWizardPrototype.VSUI
 		private void btnNext_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			var datasetsDialog = new DataSetRDLX();
-			datasetsDialog.ShowDialog(this);
+			if (PrototypeSettings.IsRDLX)
+			{
+				var datasetsDialog = new DataSetRDLX();
+				datasetsDialog.ShowDialog(this);
+			}
+			else
+			{
+				var rpxQueryDialog = new DataSetRPX();
+				rpxQueryDialog.ShowDialog(this);
+			}
 			this.Close();
 		}
 	}

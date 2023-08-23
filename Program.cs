@@ -21,7 +21,9 @@ namespace ReportWizardPrototype
 
 	internal static class PrototypeSettings
 	{
+		public static bool IsRDLX = false;
 		public static bool VSNETUI = false;
 		public static bool ConnectionError = true;
+		public static bool QueryError = true;
 	}
 }

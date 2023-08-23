@@ -1,13 +1,4 @@
 ﻿using ReportWizardPrototype.VSUI;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ReportWizardPrototype
 {
@@ -57,6 +48,36 @@ namespace ReportWizardPrototype
 		private void button2_Click(object sender, EventArgs e)
 		{
 			this.listBox1.Items.RemoveAt(this.listBox1.SelectedIndex);
+		}
+		private async Task<bool> ValidateRoutine()
+		{
+			await Task.Delay(500);
+			return PrototypeSettings.QueryError;
+		}
+
+		private async void btnValidate_Click(object sender, EventArgs e)
+		{
+			UseWaitCursor = true;
+			listBox1.Enabled = button1.Enabled = button2.Enabled = btnValidate.Enabled = btnBack.Enabled = btnNext.Enabled = linkLabel1.Enabled = false;
+
+			// Simulate some asynchronous work
+			bool error = await ValidateRoutine();
+
+			// Restore the cursor and re-enable the UI
+			this.UseWaitCursor = false;
+			listBox1.Enabled = button1.Enabled = button2.Enabled = btnValidate.Enabled = btnBack.Enabled = btnNext.Enabled = linkLabel1.Enabled = true;
+
+			if (error)
+			{
+				var errorForm = new ErrorForm();
+				errorForm.GeneralMessage = $"An error occurred while executing {listBox1.SelectedItem.ToString()}";
+				errorForm.ShowDialog(this);
+			}
+			else
+			{
+				MessageBox.Show("Query executed successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+
 		}
 	}
 }

@@ -42,6 +42,7 @@
 			linkLabel1 = new LinkLabel();
 			label1 = new Label();
 			textBox2 = new TextBox();
+			btnValidate = new Button();
 			panel1.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -162,7 +163,7 @@
 			// linkLabel1
 			// 
 			linkLabel1.AutoSize = true;
-			linkLabel1.Location = new Point(547, 383);
+			linkLabel1.Location = new Point(251, 383);
 			linkLabel1.Name = "linkLabel1";
 			linkLabel1.Size = new Size(102, 15);
 			linkLabel1.TabIndex = 40;
@@ -187,12 +188,23 @@
 			textBox2.TabIndex = 42;
 			textBox2.Text = "Query1";
 			// 
+			// btnValidate
+			// 
+			btnValidate.Location = new Point(574, 383);
+			btnValidate.Name = "btnValidate";
+			btnValidate.Size = new Size(75, 23);
+			btnValidate.TabIndex = 43;
+			btnValidate.Text = "Validate";
+			btnValidate.UseVisualStyleBackColor = true;
+			btnValidate.Click += btnValidate_Click;
+			// 
 			// DataSetRDLX
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = SystemColors.ControlLightLight;
 			ClientSize = new Size(661, 522);
+			Controls.Add(btnValidate);
 			Controls.Add(textBox2);
 			Controls.Add(label1);
 			Controls.Add(linkLabel1);
@@ -233,5 +245,6 @@
 		private LinkLabel linkLabel1;
 		private Label label1;
 		private TextBox textBox2;
+		private Button btnValidate;
 	}
 }

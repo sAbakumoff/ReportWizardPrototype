@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			pictureBox1 = new PictureBox();
-			label1 = new Label();
+			lblGeneralMessage = new Label();
 			btnOK = new Button();
 			btnDetails = new Button();
 			txtDetails = new TextBox();
@@ -44,14 +44,14 @@
 			pictureBox1.TabIndex = 0;
 			pictureBox1.TabStop = false;
 			// 
-			// label1
+			// lblGeneralMessage
 			// 
-			label1.AutoSize = true;
-			label1.Location = new Point(70, 13);
-			label1.Name = "label1";
-			label1.Size = new Size(297, 30);
-			label1.TabIndex = 1;
-			label1.Text = "Unable to connect to a data source. \r\nPlease verify the connection properties and credentials.";
+			lblGeneralMessage.AutoSize = true;
+			lblGeneralMessage.Location = new Point(70, 13);
+			lblGeneralMessage.Name = "lblGeneralMessage";
+			lblGeneralMessage.Size = new Size(297, 30);
+			lblGeneralMessage.TabIndex = 1;
+			lblGeneralMessage.Text = "Unable to connect to a data source. \r\nPlease verify the connection properties and credentials.";
 			// 
 			// btnOK
 			// 
@@ -91,7 +91,7 @@
 			Controls.Add(txtDetails);
 			Controls.Add(btnDetails);
 			Controls.Add(btnOK);
-			Controls.Add(label1);
+			Controls.Add(lblGeneralMessage);
 			Controls.Add(pictureBox1);
 			FormBorderStyle = FormBorderStyle.FixedDialog;
 			MaximizeBox = false;
@@ -107,7 +107,7 @@
 		#endregion
 
 		private PictureBox pictureBox1;
-		private Label label1;
+		private Label lblGeneralMessage;
 		private Button btnOK;
 		private Button btnDetails;
 		private TextBox txtDetails;

@@ -37,5 +37,17 @@ namespace ReportWizardPrototype
 		{
 			this.Close();
 		}
+
+		public string GeneralMessage
+		{
+			get
+			{
+				return lblGeneralMessage.Text;
+			}
+			set
+			{
+				lblGeneralMessage.Text = value;
+			}
+		}
 	}
 }
