@@ -4,17 +4,31 @@ namespace ReportWizardPrototype.VSUI
 {
 	public partial class VSMSSQLConnection : Form
 	{
-		private bool _connectionError;
 		public VSMSSQLConnection()
 		{
 			InitializeComponent();
+			linkLabel1.Click += OpenParamsDialog;
+			linkLabel2.Click += OpenParamsDialog;
+			linkUserNameParam.Click += OpenParamsDialog;
+			linkPwdParam.Click += OpenParamsDialog;
+			if (!PrototypeSettings.VSNETUI)
+			{
+				var reducedLocation = groupBox1.Height + 20;
+				groupBox1.Visible = false;
+				groupGeneral.Top -= reducedLocation;
+				groupAuth.Top -= reducedLocation;
+				btnAdvanced.Top -= reducedLocation;
+				btnTestConnection.Top -= reducedLocation;
+				groupAuth.Enabled = groupGeneral.Enabled = btnAdvanced.Enabled = true;
+			}
 		}
 
-		public VSMSSQLConnection(bool connectionError = false)
+		private void OpenParamsDialog(object? sender, EventArgs args)
 		{
-			InitializeComponent();
-			_connectionError = connectionError;
+			var paramsDialog = new Parameters();
+			paramsDialog.ShowDialog(this);
 		}
+
 
 		private void radioButton2_CheckedChanged(object sender, EventArgs e)
 		{
@@ -37,15 +51,15 @@ namespace ReportWizardPrototype.VSUI
 
 		private async void btnTestConnection_Click(object sender, EventArgs e)
 		{
-			this.Enabled = false;
-			this.Cursor = Cursors.AppStarting;
+			groupBox1.Enabled = btnAdvanced.Enabled = btnTestConnection.Enabled = btnNext.Enabled = btnBack.Enabled = groupGeneral.Enabled = groupAuth.Enabled = btnAdvanced.Enabled = btnTestConnection.Enabled = btnNext.Enabled = btnBack.Enabled = false;
+			UseWaitCursor = true;
 
 			// Simulate some asynchronous work
 			bool error = await ConnectionRoutine();
 
 			// Restore the cursor and re-enable the UI
-			this.Cursor = Cursors.Default;
-			this.Enabled = true;
+			this.UseWaitCursor = false;
+			groupBox1.Enabled = btnAdvanced.Enabled = btnTestConnection.Enabled = btnNext.Enabled = btnBack.Enabled = groupGeneral.Enabled = groupAuth.Enabled = btnAdvanced.Enabled = btnTestConnection.Enabled = btnNext.Enabled = btnBack.Enabled = true;
 			if (error)
 			{
 				var errorForm = new ErrorForm();
@@ -59,7 +73,7 @@ namespace ReportWizardPrototype.VSUI
 		private async Task<bool> ConnectionRoutine()
 		{
 			await Task.Delay(2000);
-			return _connectionError;
+			return PrototypeSettings.ConnectionError;
 		}
 
 		private void btnCancel_Click(object sender, EventArgs e)
@@ -71,6 +85,14 @@ namespace ReportWizardPrototype.VSUI
 		{
 			var advancedOptions = new MSSQLAdvancedProps();
 			advancedOptions.ShowDialog(this);
+		}
+
+		private void btnNext_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			var datasetsDialog = new DataSetRDLX();
+			datasetsDialog.ShowDialog(this);
+			this.Close();
 		}
 	}
 }

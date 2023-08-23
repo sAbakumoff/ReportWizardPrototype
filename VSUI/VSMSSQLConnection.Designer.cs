@@ -107,7 +107,7 @@
 			radioAppConfig.Size = new Size(619, 27);
 			radioAppConfig.TabIndex = 0;
 			radioAppConfig.TabStop = true;
-			radioAppConfig.Text = "The connection string is saved in the application confguration file and I want to re-use it";
+			radioAppConfig.Text = "Use Existing Connection String from Configuration File";
 			radioAppConfig.UseVisualStyleBackColor = true;
 			// 
 			// radioManual
@@ -119,7 +119,7 @@
 			radioManual.Name = "radioManual";
 			radioManual.Size = new Size(619, 28);
 			radioManual.TabIndex = 1;
-			radioManual.Text = "I want to manually specify the connection string";
+			radioManual.Text = "Manually Specify Connection String";
 			radioManual.UseVisualStyleBackColor = true;
 			radioManual.CheckedChanged += radioButton2_CheckedChanged;
 			// 
@@ -131,7 +131,7 @@
 			label1.Name = "label1";
 			label1.Size = new Size(181, 33);
 			label1.TabIndex = 2;
-			label1.Text = "Connection string name:";
+			label1.Text = "Connection String Name:";
 			label1.TextAlign = ContentAlignment.MiddleLeft;
 			// 
 			// txtConnStringName
@@ -158,8 +158,8 @@
 			// 
 			tableLayoutPanel2.ColumnCount = 3;
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
-			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 65F));
+			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
 			tableLayoutPanel2.Controls.Add(linkLabel2, 2, 1);
 			tableLayoutPanel2.Controls.Add(label2, 0, 0);
 			tableLayoutPanel2.Controls.Add(textBox2, 1, 0);
@@ -179,9 +179,9 @@
 			// 
 			linkLabel2.AutoSize = true;
 			linkLabel2.Dock = DockStyle.Fill;
-			linkLabel2.Location = new Point(503, 34);
+			linkLabel2.Location = new Point(534, 34);
 			linkLabel2.Name = "linkLabel2";
-			linkLabel2.Size = new Size(119, 34);
+			linkLabel2.Size = new Size(88, 34);
 			linkLabel2.TabIndex = 5;
 			linkLabel2.TabStop = true;
 			linkLabel2.Text = "Parameter...";
@@ -204,7 +204,7 @@
 			textBox2.Location = new Point(128, 3);
 			textBox2.Multiline = true;
 			textBox2.Name = "textBox2";
-			textBox2.Size = new Size(369, 28);
+			textBox2.Size = new Size(400, 28);
 			textBox2.TabIndex = 1;
 			// 
 			// label3
@@ -224,16 +224,16 @@
 			textBox3.Location = new Point(128, 37);
 			textBox3.Multiline = true;
 			textBox3.Name = "textBox3";
-			textBox3.Size = new Size(369, 28);
+			textBox3.Size = new Size(400, 28);
 			textBox3.TabIndex = 3;
 			// 
 			// linkLabel1
 			// 
 			linkLabel1.AutoSize = true;
 			linkLabel1.Dock = DockStyle.Fill;
-			linkLabel1.Location = new Point(503, 0);
+			linkLabel1.Location = new Point(534, 0);
 			linkLabel1.Name = "linkLabel1";
-			linkLabel1.Size = new Size(119, 34);
+			linkLabel1.Size = new Size(88, 34);
 			linkLabel1.TabIndex = 4;
 			linkLabel1.TabStop = true;
 			linkLabel1.Text = "Parameter...";
@@ -254,8 +254,8 @@
 			// 
 			tableLayoutPanel3.ColumnCount = 3;
 			tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-			tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
-			tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+			tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 65F));
+			tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
 			tableLayoutPanel3.Controls.Add(linkPwdParam, 2, 2);
 			tableLayoutPanel3.Controls.Add(txtPwd, 1, 2);
 			tableLayoutPanel3.Controls.Add(label5, 0, 2);
@@ -271,7 +271,6 @@
 			tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
 			tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
 			tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-			tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
 			tableLayoutPanel3.Size = new Size(625, 91);
 			tableLayoutPanel3.TabIndex = 0;
 			// 
@@ -279,9 +278,9 @@
 			// 
 			linkPwdParam.AutoSize = true;
 			linkPwdParam.Dock = DockStyle.Fill;
-			linkPwdParam.Location = new Point(503, 60);
+			linkPwdParam.Location = new Point(534, 60);
 			linkPwdParam.Name = "linkPwdParam";
-			linkPwdParam.Size = new Size(119, 31);
+			linkPwdParam.Size = new Size(88, 31);
 			linkPwdParam.TabIndex = 8;
 			linkPwdParam.TabStop = true;
 			linkPwdParam.Text = "Parameter...";
@@ -293,7 +292,7 @@
 			txtPwd.Location = new Point(128, 63);
 			txtPwd.Multiline = true;
 			txtPwd.Name = "txtPwd";
-			txtPwd.Size = new Size(369, 25);
+			txtPwd.Size = new Size(400, 25);
 			txtPwd.TabIndex = 7;
 			// 
 			// label5
@@ -311,9 +310,9 @@
 			// 
 			linkUserNameParam.AutoSize = true;
 			linkUserNameParam.Dock = DockStyle.Fill;
-			linkUserNameParam.Location = new Point(503, 30);
+			linkUserNameParam.Location = new Point(534, 30);
 			linkUserNameParam.Name = "linkUserNameParam";
-			linkUserNameParam.Size = new Size(119, 30);
+			linkUserNameParam.Size = new Size(88, 30);
 			linkUserNameParam.TabIndex = 5;
 			linkUserNameParam.TabStop = true;
 			linkUserNameParam.Text = "Parameter...";
@@ -325,7 +324,7 @@
 			txtUserName.Location = new Point(128, 33);
 			txtUserName.Multiline = true;
 			txtUserName.Name = "txtUserName";
-			txtUserName.Size = new Size(369, 24);
+			txtUserName.Size = new Size(400, 24);
 			txtUserName.TabIndex = 4;
 			// 
 			// label4
@@ -358,7 +357,7 @@
 			radioAuthWindows.Dock = DockStyle.Fill;
 			radioAuthWindows.Location = new Point(128, 3);
 			radioAuthWindows.Name = "radioAuthWindows";
-			radioAuthWindows.Size = new Size(369, 24);
+			radioAuthWindows.Size = new Size(400, 24);
 			radioAuthWindows.TabIndex = 9;
 			radioAuthWindows.TabStop = true;
 			radioAuthWindows.Text = "Windows";
@@ -378,7 +377,7 @@
 			// btnAdvanced
 			// 
 			btnAdvanced.Enabled = false;
-			btnAdvanced.Location = new Point(15, 419);
+			btnAdvanced.Location = new Point(18, 419);
 			btnAdvanced.Name = "btnAdvanced";
 			btnAdvanced.Size = new Size(126, 23);
 			btnAdvanced.TabIndex = 30;
@@ -426,6 +425,7 @@
 			btnNext.TabIndex = 30;
 			btnNext.Text = "Next >";
 			btnNext.UseVisualStyleBackColor = true;
+			btnNext.Click += btnNext_Click;
 			// 
 			// label6
 			// 

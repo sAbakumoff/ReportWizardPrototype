@@ -1,6 +1,6 @@
 ﻿namespace ReportWizardPrototype
 {
-	partial class MSSQLAdvancedProps
+	partial class Parameters
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,61 +28,64 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			gridAdvancedOptions = new DataGridView();
-			OptionName = new DataGridViewTextBoxColumn();
-			OptionValue = new DataGridViewTextBoxColumn();
-			Variable = new DataGridViewLinkColumn();
+			dataGridView1 = new DataGridView();
+			ParamName = new DataGridViewTextBoxColumn();
+			ParamType = new DataGridViewComboBoxColumn();
+			ParamValue = new DataGridViewTextBoxColumn();
 			label6 = new Label();
 			panel1 = new Panel();
 			button2 = new Button();
 			button1 = new Button();
 			btnCancel = new Button();
-			((System.ComponentModel.ISupportInitialize)gridAdvancedOptions).BeginInit();
+			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
 			panel1.SuspendLayout();
 			SuspendLayout();
 			// 
-			// gridAdvancedOptions
+			// dataGridView1
 			// 
-			gridAdvancedOptions.BorderStyle = BorderStyle.None;
-			gridAdvancedOptions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			gridAdvancedOptions.Columns.AddRange(new DataGridViewColumn[] { OptionName, OptionValue, Variable });
-			gridAdvancedOptions.Location = new Point(18, 42);
-			gridAdvancedOptions.Name = "gridAdvancedOptions";
-			gridAdvancedOptions.RowTemplate.Height = 25;
-			gridAdvancedOptions.Size = new Size(443, 307);
-			gridAdvancedOptions.TabIndex = 20;
+			dataGridView1.AllowUserToResizeColumns = false;
+			dataGridView1.AllowUserToResizeRows = false;
+			dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			dataGridView1.BorderStyle = BorderStyle.None;
+			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ParamName, ParamType, ParamValue });
+			dataGridView1.Location = new Point(18, 65);
+			dataGridView1.Margin = new Padding(2);
+			dataGridView1.Name = "dataGridView1";
+			dataGridView1.RowTemplate.Height = 25;
+			dataGridView1.Size = new Size(442, 292);
+			dataGridView1.TabIndex = 3;
 			// 
-			// OptionName
+			// ParamName
 			// 
-			OptionName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-			OptionName.HeaderText = "Name";
-			OptionName.Name = "OptionName";
+			ParamName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+			ParamName.HeaderText = "Name";
+			ParamName.Name = "ParamName";
 			// 
-			// OptionValue
+			// ParamType
 			// 
-			OptionValue.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-			OptionValue.HeaderText = "Value";
-			OptionValue.Name = "OptionValue";
+			ParamType.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+			ParamType.HeaderText = "Type";
+			ParamType.Items.AddRange(new object[] { "String", "Date", "Boolean", "Integer", "Float" });
+			ParamType.Name = "ParamType";
+			ParamType.Resizable = DataGridViewTriState.True;
+			ParamType.SortMode = DataGridViewColumnSortMode.Automatic;
 			// 
-			// Variable
+			// ParamValue
 			// 
-			Variable.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-			Variable.HeaderText = "";
-			Variable.Name = "Variable";
-			Variable.ReadOnly = true;
-			Variable.Resizable = DataGridViewTriState.True;
-			Variable.Text = "Parameter...";
-			Variable.UseColumnTextForLinkValue = true;
+			ParamValue.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+			ParamValue.HeaderText = "Value";
+			ParamValue.Name = "ParamValue";
 			// 
 			// label6
 			// 
 			label6.AutoSize = true;
 			label6.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-			label6.Location = new Point(18, 9);
+			label6.Location = new Point(18, 22);
 			label6.Name = "label6";
-			label6.Size = new Size(260, 19);
-			label6.TabIndex = 34;
-			label6.Text = "Configure Advanced Connection Options";
+			label6.Size = new Size(268, 19);
+			label6.TabIndex = 35;
+			label6.Text = "Select Existing Parameter or Add New One";
 			// 
 			// panel1
 			// 
@@ -94,7 +97,7 @@
 			panel1.Location = new Point(0, 367);
 			panel1.Name = "panel1";
 			panel1.Size = new Size(478, 55);
-			panel1.TabIndex = 35;
+			panel1.TabIndex = 36;
 			// 
 			// button2
 			// 
@@ -104,7 +107,7 @@
 			button2.TabIndex = 34;
 			button2.Text = "OK";
 			button2.UseVisualStyleBackColor = true;
-			button2.Click += button2_Click;
+			button2.Click += button2_Click_1;
 			// 
 			// button1
 			// 
@@ -114,7 +117,7 @@
 			button1.TabIndex = 33;
 			button1.Text = "Cancel";
 			button1.UseVisualStyleBackColor = true;
-			button1.Click += button1_Click;
+			button1.Click += button1_Click_1;
 			// 
 			// btnCancel
 			// 
@@ -125,7 +128,7 @@
 			btnCancel.Text = "Cancel";
 			btnCancel.UseVisualStyleBackColor = true;
 			// 
-			// MSSQLAdvancedProps
+			// Parameters
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
@@ -133,14 +136,14 @@
 			ClientSize = new Size(478, 422);
 			Controls.Add(panel1);
 			Controls.Add(label6);
-			Controls.Add(gridAdvancedOptions);
+			Controls.Add(dataGridView1);
 			FormBorderStyle = FormBorderStyle.FixedDialog;
 			MaximizeBox = false;
 			MinimizeBox = false;
-			Name = "MSSQLAdvancedProps";
+			Name = "Parameters";
 			StartPosition = FormStartPosition.CenterParent;
-			Text = "MS SQL Connection";
-			((System.ComponentModel.ISupportInitialize)gridAdvancedOptions).EndInit();
+			Text = "Parameters";
+			((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
 			panel1.ResumeLayout(false);
 			ResumeLayout(false);
 			PerformLayout();
@@ -148,14 +151,14 @@
 
 		#endregion
 
-		private DataGridView gridAdvancedOptions;
+		private DataGridView dataGridView1;
+		private DataGridViewTextBoxColumn ParamName;
+		private DataGridViewComboBoxColumn ParamType;
+		private DataGridViewTextBoxColumn ParamValue;
 		private Label label6;
 		private Panel panel1;
 		private Button button2;
 		private Button button1;
 		private Button btnCancel;
-		private DataGridViewTextBoxColumn OptionName;
-		private DataGridViewTextBoxColumn OptionValue;
-		private DataGridViewLinkColumn Variable;
 	}
 }
