@@ -52,6 +52,7 @@
 			panel1 = new Panel();
 			btnCancel = new Button();
 			label6 = new Label();
+			btnBack = new Button();
 			groupDatabase.SuspendLayout();
 			tableLayoutPanel1.SuspendLayout();
 			groupFile.SuspendLayout();
@@ -352,6 +353,7 @@
 			// panel1
 			// 
 			panel1.BackColor = SystemColors.Control;
+			panel1.Controls.Add(btnBack);
 			panel1.Controls.Add(btnCancel);
 			panel1.Dock = DockStyle.Bottom;
 			panel1.Location = new Point(0, 461);
@@ -378,6 +380,16 @@
 			label6.Size = new Size(165, 19);
 			label6.TabIndex = 33;
 			label6.Text = "Choose Data Source Type";
+			// 
+			// btnBack
+			// 
+			btnBack.Location = new Point(492, 18);
+			btnBack.Name = "btnBack";
+			btnBack.Size = new Size(75, 23);
+			btnBack.TabIndex = 33;
+			btnBack.Text = "< Back";
+			btnBack.UseVisualStyleBackColor = true;
+			btnBack.Click += btnBack_Click;
 			// 
 			// DataSourceType
 			// 
@@ -439,5 +451,6 @@
 		private Panel panel1;
 		private Button btnCancel;
 		private Label label6;
+		private Button btnBack;
 	}
 }
