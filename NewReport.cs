@@ -58,9 +58,9 @@ namespace ReportWizardPrototype
 
 		}
 
-		private Plate BuildPlate(string image, string description, string title)
+		private ReportType BuildPlate(string image, string description, string title)
 		{
-			var plate = new Plate();
+			var plate = new ReportType();
 			plate.BackColor = SystemColors.ControlLightLight;
 			plate.Title = title;
 			plate.Description = description;

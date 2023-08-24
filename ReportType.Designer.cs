@@ -1,6 +1,6 @@
 ﻿namespace ReportWizardPrototype
 {
-	partial class Plate
+	partial class ReportType
 	{
 		/// <summary> 
 		/// Required designer variable.

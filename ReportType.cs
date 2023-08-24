@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace ReportWizardPrototype
 {
-	public partial class Plate : UserControl
+	public partial class ReportType : UserControl
 	{
 		private Color _defaultColor = Color.FromArgb(241, 241, 241);
 
 		public event EventHandler PlateClick;
 
-		public Plate()
+		public ReportType()
 		{
 			InitializeComponent();
 			SetChildrenHandlers();

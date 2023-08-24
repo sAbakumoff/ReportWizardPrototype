@@ -9,17 +9,41 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\CSV_small.png" />
     <None Remove="Resources\dashboard.png" />
+    <None Remove="Resources\json_api_small.png" />
+    <None Remove="Resources\JSON_small.png" />
+    <None Remove="Resources\MSAccess_small.png" />
+    <None Remove="Resources\MSSQLSERVER_small.png" />
+    <None Remove="Resources\MySQL_small.png" />
+    <None Remove="Resources\object_small.png" />
+    <None Remove="Resources\oracle_small.png" />
     <None Remove="Resources\page.png" />
+    <None Remove="Resources\PostgreSQL_small.png" />
     <None Remove="Resources\rdlx.png" />
     <None Remove="Resources\section.png" />
+    <None Remove="Resources\sqlite_small.png" />
+    <None Remove="Resources\XLS_small.png" />
+    <None Remove="Resources\XML_small.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\CSV_small.png" />
     <EmbeddedResource Include="Resources\dashboard.png" />
+    <EmbeddedResource Include="Resources\json_api_small.png" />
+    <EmbeddedResource Include="Resources\JSON_small.png" />
+    <EmbeddedResource Include="Resources\MSAccess_small.png" />
+    <EmbeddedResource Include="Resources\MSSQLSERVER_small.png" />
+    <EmbeddedResource Include="Resources\MySQL_small.png" />
+    <EmbeddedResource Include="Resources\object_small.png" />
+    <EmbeddedResource Include="Resources\oracle_small.png" />
     <EmbeddedResource Include="Resources\page.png" />
+    <EmbeddedResource Include="Resources\PostgreSQL_small.png" />
     <EmbeddedResource Include="Resources\rdlx.png" />
     <EmbeddedResource Include="Resources\section.png" />
+    <EmbeddedResource Include="Resources\sqlite_small.png" />
+    <EmbeddedResource Include="Resources\XLS_small.png" />
+    <EmbeddedResource Include="Resources\XML_small.png" />
   </ItemGroup>
 
   <ItemGroup>
