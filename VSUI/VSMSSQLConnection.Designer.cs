@@ -146,13 +146,13 @@
 			// groupGeneral
 			// 
 			groupGeneral.Controls.Add(tableLayoutPanel2);
-			groupGeneral.Enabled = false;
 			groupGeneral.Location = new Point(18, 182);
 			groupGeneral.Name = "groupGeneral";
 			groupGeneral.Size = new Size(631, 90);
 			groupGeneral.TabIndex = 1;
 			groupGeneral.TabStop = false;
 			groupGeneral.Text = "General";
+			groupGeneral.Visible = false;
 			// 
 			// tableLayoutPanel2
 			// 
@@ -242,13 +242,13 @@
 			// groupAuth
 			// 
 			groupAuth.Controls.Add(tableLayoutPanel3);
-			groupAuth.Enabled = false;
 			groupAuth.Location = new Point(18, 292);
 			groupAuth.Name = "groupAuth";
 			groupAuth.Size = new Size(631, 113);
 			groupAuth.TabIndex = 2;
 			groupAuth.TabStop = false;
 			groupAuth.Text = "Authentication";
+			groupAuth.Visible = false;
 			// 
 			// tableLayoutPanel3
 			// 
@@ -366,7 +366,7 @@
 			// 
 			// btnTestConnection
 			// 
-			btnTestConnection.Location = new Point(523, 419);
+			btnTestConnection.Location = new Point(18, 18);
 			btnTestConnection.Name = "btnTestConnection";
 			btnTestConnection.Size = new Size(126, 23);
 			btnTestConnection.TabIndex = 26;
@@ -376,13 +376,13 @@
 			// 
 			// btnAdvanced
 			// 
-			btnAdvanced.Enabled = false;
 			btnAdvanced.Location = new Point(18, 419);
 			btnAdvanced.Name = "btnAdvanced";
 			btnAdvanced.Size = new Size(126, 23);
 			btnAdvanced.TabIndex = 30;
 			btnAdvanced.Text = "Advanced...";
 			btnAdvanced.UseVisualStyleBackColor = true;
+			btnAdvanced.Visible = false;
 			btnAdvanced.Click += btnAdvanced_Click;
 			// 
 			// panel1
@@ -391,6 +391,7 @@
 			panel1.Controls.Add(btnCancel);
 			panel1.Controls.Add(btnBack);
 			panel1.Controls.Add(btnNext);
+			panel1.Controls.Add(btnTestConnection);
 			panel1.Dock = DockStyle.Bottom;
 			panel1.Location = new Point(0, 461);
 			panel1.Name = "panel1";
@@ -447,7 +448,6 @@
 			Controls.Add(label6);
 			Controls.Add(panel1);
 			Controls.Add(btnAdvanced);
-			Controls.Add(btnTestConnection);
 			Controls.Add(groupAuth);
 			Controls.Add(groupGeneral);
 			Controls.Add(groupBox1);

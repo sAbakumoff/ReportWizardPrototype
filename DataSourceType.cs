@@ -99,7 +99,7 @@ namespace ReportWizardPrototype
 				Title = title,
 				Icon = bmp,
 				Dock = DockStyle.Fill,
-				TabStop = false
+				TabStop = true
 			};
 
 		}

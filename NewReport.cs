@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Security.Policy;
+using static System.Net.WebRequestMethods;
 
 namespace ReportWizardPrototype
 {
@@ -16,79 +10,93 @@ namespace ReportWizardPrototype
 		public NewReport()
 		{
 			InitializeComponent();
-			this.HelpButton = true;
-			var rdlxPlate = BuildPlate("ReportWizardPrototype.Resources.rdlx.png", "Multi-section continous page layout. Use this layout by default for most reports", "RDLX");
-			rdlxPlate.Click += (sender, args) =>
+			var rdlxItem = BuildReportTypeItem("ReportWizardPrototype.Resources.rdlx.png", "Multi-section continous page layout. Use this layout by default for most reports.", "RDLX");
+			rdlxItem.Click += (sender, args) =>
 			{
 				PrototypeSettings.IsRDLX = true;
 			};
-			var dashboardPlate = BuildPlate("ReportWizardPrototype.Resources.dashboard.png", "Multi-section pageless layout. Use this to create dashboard-like visualization and interactivity", "RDLX Dashboard");
-			dashboardPlate.Click += (sender, args) =>
+			var dashboardItem = BuildReportTypeItem("ReportWizardPrototype.Resources.dashboard.png", "Multi-section pageless layout. Use this to create dashboard-like visualization and interactivity.", "RDLX Dashboard");
+			dashboardItem.Click += (sender, args) =>
 			{
 				PrototypeSettings.IsRDLX = true;
 			};
-			var pagePlate = BuildPlate("ReportWizardPrototype.Resources.page.png", "Fixed page layout. Use this layout to build pixel-perfect reports", "Page");
-			pagePlate.Click += (sender, args) =>
+			var pageItem = BuildReportTypeItem("ReportWizardPrototype.Resources.page.png", "Fixed page layout. Use this layout to build pixel-perfect reports.", "Page");
+			pageItem.Click += (sender, args) =>
 			{
 				PrototypeSettings.IsRDLX = true;
 			};
-			var sectionPlate = BuildPlate("ReportWizardPrototype.Resources.section.png", "Banded layout. Use this layout for simple band-based reports", "Section");
-			sectionPlate.Click += (sender, args) =>
+			var sectionItem = BuildReportTypeItem("ReportWizardPrototype.Resources.section.png", "Banded layout. Use this layout for simple band-based reports.", "Section");
+			sectionItem.Click += (sender, args) =>
 			{
 				PrototypeSettings.IsRDLX = false;
 			};
-			this.tableLayoutPanel1.Controls.Add(rdlxPlate);
-			this.tableLayoutPanel1.Controls.Add(dashboardPlate);
-			this.tableLayoutPanel1.Controls.Add(pagePlate);
-			this.tableLayoutPanel1.Controls.Add(sectionPlate);
+			tableLayoutPanel1.Controls.Add(rdlxItem);
+			tableLayoutPanel1.Controls.Add(dashboardItem);
+			tableLayoutPanel1.Controls.Add(pageItem);
+			tableLayoutPanel1.Controls.Add(sectionItem);
 
-			this.tableLayoutPanel1.SetRow(rdlxPlate, 0);
-			this.tableLayoutPanel1.SetColumn(rdlxPlate, 0);
+			tableLayoutPanel1.SetRow(rdlxItem, 0);
+			tableLayoutPanel1.SetColumn(rdlxItem, 0);
 
-			this.tableLayoutPanel1.SetRow(dashboardPlate, 1);
-			this.tableLayoutPanel1.SetColumn(dashboardPlate, 0);
+			tableLayoutPanel1.SetRow(dashboardItem, 1);
+			tableLayoutPanel1.SetColumn(dashboardItem, 0);
 
-			this.tableLayoutPanel1.SetRow(pagePlate, 2);
-			this.tableLayoutPanel1.SetColumn(pagePlate, 0);
+			tableLayoutPanel1.SetRow(pageItem, 2);
+			tableLayoutPanel1.SetColumn(pageItem, 0);
 
-			this.tableLayoutPanel1.SetRow(sectionPlate, 3);
-			this.tableLayoutPanel1.SetColumn(sectionPlate, 0);
-
-			rdlxPlate.Select();
-
+			tableLayoutPanel1.SetRow(sectionItem, 3);
+			tableLayoutPanel1.SetColumn(sectionItem, 0);
+			if (PrototypeSettings.VSNETUI)
+			{
+				var codeBasedItem = BuildReportTypeItem("ReportWizardPrototype.Resources.section.png", "Code-based layout. Use this layout to fully control the report output with your code.", "Code-based");
+				codeBasedItem.Click += (sender, args) =>
+				{
+					PrototypeSettings.IsRDLX = false;
+				};
+				tableLayoutPanel1.Controls.Add(codeBasedItem);
+				tableLayoutPanel1.SetRow(codeBasedItem, 4);
+				tableLayoutPanel1.SetColumn(codeBasedItem, 0);
+			}
+			rdlxItem.Select();
 		}
 
-		private ReportType BuildPlate(string image, string description, string title)
+		private static ReportType BuildReportTypeItem(string image, string description, string title)
 		{
-			var plate = new ReportType();
-			plate.BackColor = SystemColors.ControlLightLight;
-			plate.Title = title;
-			plate.Description = description;
 			Stream myStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(image);
-			Bitmap bmp = new Bitmap(myStream);
-			plate.Icon = bmp;
-			plate.Dock = DockStyle.Fill;
-			return plate;
-
+			Bitmap bmp = new(myStream);
+			return new ReportType
+			{
+				BackColor = SystemColors.ControlLightLight,
+				Title = title,
+				Description = description,
+				Icon = bmp,
+				Dock = DockStyle.Fill
+			};
 		}
 
 
-		private void btnCancel_Click(object sender, EventArgs e)
+		private void OnCancel(object sender, EventArgs e)
 		{
 			Application.Exit();
 		}
 
-		private void onFinish(object sender, EventArgs e)
+		private void OnFinish(object sender, EventArgs e)
 		{
 			Application.Exit();
 		}
 
-		private void onNext(object sender, EventArgs e)
+		private void OnNext(object sender, EventArgs e)
 		{
-			this.Hide();
+			Hide();
 			var dataSourceType = new DataSourceType();
 			dataSourceType.ShowDialog(this);
-			this.Close();
+			Close();
+		}
+
+		private void OnHelp(object sender, EventArgs e)
+		{
+			var helpUrl = "https://www.grapecity.com/activereportsnet/docs/latest/online/reporttypes.html";
+			Process.Start(new ProcessStartInfo { FileName = helpUrl, UseShellExecute = true });
 		}
 	}
 }

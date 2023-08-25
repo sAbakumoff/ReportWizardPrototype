@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			panel1 = new Panel();
+			btnHelp = new Button();
 			btnCancel = new Button();
 			btnNext = new Button();
 			btnFinish = new Button();
@@ -40,6 +41,7 @@
 			// panel1
 			// 
 			panel1.BackColor = SystemColors.Control;
+			panel1.Controls.Add(btnHelp);
 			panel1.Controls.Add(btnCancel);
 			panel1.Controls.Add(btnNext);
 			panel1.Controls.Add(btnFinish);
@@ -49,35 +51,45 @@
 			panel1.Size = new Size(661, 61);
 			panel1.TabIndex = 34;
 			// 
+			// btnHelp
+			// 
+			btnHelp.Location = new Point(12, 18);
+			btnHelp.Name = "btnHelp";
+			btnHelp.Size = new Size(75, 23);
+			btnHelp.TabIndex = 33;
+			btnHelp.Text = "Help";
+			btnHelp.UseVisualStyleBackColor = true;
+			btnHelp.Click += OnHelp;
+			// 
 			// btnCancel
 			// 
 			btnCancel.Location = new Point(574, 18);
 			btnCancel.Name = "btnCancel";
 			btnCancel.Size = new Size(75, 23);
-			btnCancel.TabIndex = 32;
+			btnCancel.TabIndex = 39;
 			btnCancel.Text = "Cancel";
 			btnCancel.UseVisualStyleBackColor = true;
-			btnCancel.Click += btnCancel_Click;
+			btnCancel.Click += OnCancel;
 			// 
 			// btnNext
 			// 
 			btnNext.Location = new Point(412, 18);
 			btnNext.Name = "btnNext";
 			btnNext.Size = new Size(75, 23);
-			btnNext.TabIndex = 31;
+			btnNext.TabIndex = 35;
 			btnNext.Text = "Next >";
 			btnNext.UseVisualStyleBackColor = true;
-			btnNext.Click += onNext;
+			btnNext.Click += OnNext;
 			// 
 			// btnFinish
 			// 
 			btnFinish.Location = new Point(493, 18);
 			btnFinish.Name = "btnFinish";
 			btnFinish.Size = new Size(75, 23);
-			btnFinish.TabIndex = 30;
+			btnFinish.TabIndex = 37;
 			btnFinish.Text = "Finish >>";
 			btnFinish.UseVisualStyleBackColor = true;
-			btnFinish.Click += onFinish;
+			btnFinish.Click += OnFinish;
 			// 
 			// label6
 			// 
@@ -113,6 +125,7 @@
 			Controls.Add(tableLayoutPanel1);
 			Controls.Add(label6);
 			Controls.Add(panel1);
+			FormBorderStyle = FormBorderStyle.FixedSingle;
 			MaximizeBox = false;
 			MinimizeBox = false;
 			Name = "NewReport";
@@ -132,5 +145,6 @@
 		private Button btnFinish;
 		private Label label6;
 		private TableLayoutPanel tableLayoutPanel1;
+		private Button btnHelp;
 	}
 }

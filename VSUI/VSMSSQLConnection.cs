@@ -19,7 +19,7 @@ namespace ReportWizardPrototype.VSUI
 				groupAuth.Top -= reducedLocation;
 				btnAdvanced.Top -= reducedLocation;
 				btnTestConnection.Top -= reducedLocation;
-				groupAuth.Enabled = groupGeneral.Enabled = btnAdvanced.Enabled = true;
+				groupAuth.Visible = groupGeneral.Visible = btnAdvanced.Visible = true;
 			}
 		}
 
@@ -32,7 +32,7 @@ namespace ReportWizardPrototype.VSUI
 
 		private void radioButton2_CheckedChanged(object sender, EventArgs e)
 		{
-			groupAuth.Enabled = groupGeneral.Enabled = btnAdvanced.Enabled = radioManual.Checked;
+			groupAuth.Visible = groupGeneral.Visible = btnAdvanced.Visible = radioManual.Checked;
 			txtConnStringName.Enabled = radioAppConfig.Checked;
 		}
 

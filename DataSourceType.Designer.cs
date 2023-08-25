@@ -56,7 +56,7 @@
 			groupFile.Name = "groupFile";
 			groupFile.Padding = new Padding(3, 3, 3, 6);
 			groupFile.Size = new Size(631, 75);
-			groupFile.TabIndex = 1;
+			groupFile.TabIndex = 2;
 			groupFile.TabStop = false;
 			groupFile.Text = "File";
 			// 
@@ -86,7 +86,7 @@
 			groupBox1.Name = "groupBox1";
 			groupBox1.Padding = new Padding(3, 3, 3, 6);
 			groupBox1.Size = new Size(631, 75);
-			groupBox1.TabIndex = 2;
+			groupBox1.TabIndex = 3;
 			groupBox1.TabStop = false;
 			groupBox1.Text = "Web API";
 			// 
@@ -116,7 +116,7 @@
 			groupBox2.Name = "groupBox2";
 			groupBox2.Padding = new Padding(3, 3, 3, 6);
 			groupBox2.Size = new Size(631, 75);
-			groupBox2.TabIndex = 3;
+			groupBox2.TabIndex = 4;
 			groupBox2.TabStop = false;
 			groupBox2.Text = "Programmatic";
 			// 
@@ -198,7 +198,7 @@
 			groupBox3.Name = "groupBox3";
 			groupBox3.Padding = new Padding(3, 3, 3, 6);
 			groupBox3.Size = new Size(631, 120);
-			groupBox3.TabIndex = 34;
+			groupBox3.TabIndex = 1;
 			groupBox3.TabStop = false;
 			groupBox3.Text = "Database";
 			// 
