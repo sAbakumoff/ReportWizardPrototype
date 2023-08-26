@@ -15,7 +15,7 @@ namespace ReportWizardPrototype
 		public Parameters()
 		{
 			InitializeComponent();
-			this.dataGridView1.Rows.Add("paramTimeout", "Integer", 3000);
+			this.dataGridView1.Rows.Add("paramTimeout", "Integer", 3000, "Programmatic");
 			this.dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
 			this.dataGridView1.MultiSelect = false;
 			this.Load += Parameters_Load;

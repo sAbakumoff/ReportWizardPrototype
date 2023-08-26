@@ -52,15 +52,15 @@ namespace ReportWizardPrototype
 			tableLayoutFile.SetRow(json, 0);
 			tableLayoutFile.SetColumn(json, 1);
 
-			var xls = BuildItem("ReportWizardPrototype.Resources.XLS_small.png", "XLS");
-			tableLayoutFile.Controls.Add(xls);
-			tableLayoutFile.SetRow(xls, 0);
-			tableLayoutFile.SetColumn(xls, 2);
-
 			var xml = BuildItem("ReportWizardPrototype.Resources.XML_small.png", "XML");
 			tableLayoutFile.Controls.Add(xml);
 			tableLayoutFile.SetRow(xml, 0);
-			tableLayoutFile.SetColumn(xml, 3);
+			tableLayoutFile.SetColumn(xml, 2);
+
+			var xls = BuildItem("ReportWizardPrototype.Resources.XLS_small.png", "XLS");
+			tableLayoutFile.Controls.Add(xls);
+			tableLayoutFile.SetRow(xls, 0);
+			tableLayoutFile.SetColumn(xls, 3);
 
 			var jsonAPI = BuildItem("ReportWizardPrototype.Resources.json_api_small.png", "JSON API");
 			tableLayoutWebApi.Controls.Add(jsonAPI);
@@ -76,12 +76,12 @@ namespace ReportWizardPrototype
 
 
 
-		private void btnCancel_Click(object sender, EventArgs e)
+		private void OnCancel(object sender, EventArgs e)
 		{
 			Application.Exit();
 		}
 
-		private void btnBack_Click(object sender, EventArgs e)
+		private void OnBack(object sender, EventArgs e)
 		{
 			this.Hide();
 			var reportType = new NewReport();
@@ -104,7 +104,7 @@ namespace ReportWizardPrototype
 
 		}
 
-		private void btnNext_Click(object sender, EventArgs e)
+		private void OnNext(object sender, EventArgs e)
 		{
 			this.Hide();
 			var msSqlConnDialog = new VSMSSQLConnection();

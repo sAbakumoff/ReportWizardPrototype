@@ -29,14 +29,15 @@
 		private void InitializeComponent()
 		{
 			dataGridView1 = new DataGridView();
-			ParamName = new DataGridViewTextBoxColumn();
-			ParamType = new DataGridViewComboBoxColumn();
-			ParamValue = new DataGridViewTextBoxColumn();
 			label6 = new Label();
 			panel1 = new Panel();
 			button2 = new Button();
 			button1 = new Button();
 			btnCancel = new Button();
+			ParamName = new DataGridViewTextBoxColumn();
+			ParamType = new DataGridViewComboBoxColumn();
+			ParamValue = new DataGridViewTextBoxColumn();
+			paramInputSource = new DataGridViewComboBoxColumn();
 			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
 			panel1.SuspendLayout();
 			SuspendLayout();
@@ -48,34 +49,13 @@
 			dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 			dataGridView1.BorderStyle = BorderStyle.None;
 			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ParamName, ParamType, ParamValue });
+			dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ParamName, ParamType, ParamValue, paramInputSource });
 			dataGridView1.Location = new Point(18, 65);
 			dataGridView1.Margin = new Padding(2);
 			dataGridView1.Name = "dataGridView1";
 			dataGridView1.RowTemplate.Height = 25;
 			dataGridView1.Size = new Size(442, 292);
 			dataGridView1.TabIndex = 3;
-			// 
-			// ParamName
-			// 
-			ParamName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-			ParamName.HeaderText = "Name";
-			ParamName.Name = "ParamName";
-			// 
-			// ParamType
-			// 
-			ParamType.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-			ParamType.HeaderText = "Type";
-			ParamType.Items.AddRange(new object[] { "String", "Date", "Boolean", "Integer", "Float" });
-			ParamType.Name = "ParamType";
-			ParamType.Resizable = DataGridViewTriState.True;
-			ParamType.SortMode = DataGridViewColumnSortMode.Automatic;
-			// 
-			// ParamValue
-			// 
-			ParamValue.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-			ParamValue.HeaderText = "Value";
-			ParamValue.Name = "ParamValue";
 			// 
 			// label6
 			// 
@@ -128,6 +108,35 @@
 			btnCancel.Text = "Cancel";
 			btnCancel.UseVisualStyleBackColor = true;
 			// 
+			// ParamName
+			// 
+			ParamName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+			ParamName.HeaderText = "Name";
+			ParamName.Name = "ParamName";
+			// 
+			// ParamType
+			// 
+			ParamType.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+			ParamType.HeaderText = "Type";
+			ParamType.Items.AddRange(new object[] { "String", "Date", "Boolean", "Integer", "Float" });
+			ParamType.Name = "ParamType";
+			ParamType.Resizable = DataGridViewTriState.True;
+			ParamType.SortMode = DataGridViewColumnSortMode.Automatic;
+			// 
+			// ParamValue
+			// 
+			ParamValue.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+			ParamValue.HeaderText = "Default Value";
+			ParamValue.Name = "ParamValue";
+			// 
+			// paramInputSource
+			// 
+			paramInputSource.HeaderText = "Input Source";
+			paramInputSource.Items.AddRange(new object[] { "Interactive", "Programmatic" });
+			paramInputSource.Name = "paramInputSource";
+			paramInputSource.Resizable = DataGridViewTriState.True;
+			paramInputSource.SortMode = DataGridViewColumnSortMode.Automatic;
+			// 
 			// Parameters
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
@@ -152,13 +161,14 @@
 		#endregion
 
 		private DataGridView dataGridView1;
-		private DataGridViewTextBoxColumn ParamName;
-		private DataGridViewComboBoxColumn ParamType;
-		private DataGridViewTextBoxColumn ParamValue;
 		private Label label6;
 		private Panel panel1;
 		private Button button2;
 		private Button button1;
 		private Button btnCancel;
+		private DataGridViewTextBoxColumn ParamName;
+		private DataGridViewComboBoxColumn ParamType;
+		private DataGridViewTextBoxColumn ParamValue;
+		private DataGridViewComboBoxColumn paramInputSource;
 	}
 }

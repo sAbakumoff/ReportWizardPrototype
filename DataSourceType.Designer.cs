@@ -158,7 +158,7 @@
 			btnNext.TabIndex = 34;
 			btnNext.Text = "Next >";
 			btnNext.UseVisualStyleBackColor = true;
-			btnNext.Click += btnNext_Click;
+			btnNext.Click += OnNext;
 			// 
 			// btnBack
 			// 
@@ -168,7 +168,7 @@
 			btnBack.TabIndex = 33;
 			btnBack.Text = "< Back";
 			btnBack.UseVisualStyleBackColor = true;
-			btnBack.Click += btnBack_Click;
+			btnBack.Click += OnBack;
 			// 
 			// btnCancel
 			// 
@@ -178,7 +178,7 @@
 			btnCancel.TabIndex = 32;
 			btnCancel.Text = "Cancel";
 			btnCancel.UseVisualStyleBackColor = true;
-			btnCancel.Click += btnCancel_Click;
+			btnCancel.Click += OnCancel;
 			// 
 			// label6
 			// 

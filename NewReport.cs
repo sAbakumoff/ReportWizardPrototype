@@ -82,15 +82,27 @@ namespace ReportWizardPrototype
 
 		private void OnFinish(object sender, EventArgs e)
 		{
+			// created blank report
 			Application.Exit();
 		}
 
 		private void OnNext(object sender, EventArgs e)
 		{
-			Hide();
-			var dataSourceType = new DataSourceType();
-			dataSourceType.ShowDialog(this);
-			Close();
+			if (PrototypeSettings.IsRDLX)
+			{
+				Hide();
+				var dataSourceType = new DataSourceType();
+				dataSourceType.ShowDialog(this);
+				Close();
+			}
+			else
+			{
+				var res = MessageBox.Show("Here the Section Report Data Source dialog is displayed", "Internal Info", MessageBoxButtons.OK);
+				if (res == DialogResult.OK)
+				{
+					Application.Exit();
+				}
+			}
 		}
 
 		private void OnHelp(object sender, EventArgs e)
