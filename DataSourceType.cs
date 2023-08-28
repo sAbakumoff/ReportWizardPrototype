@@ -6,6 +6,7 @@ namespace ReportWizardPrototype
 {
 	public partial class DataSourceType : Form
 	{
+		private DataSource _selectedDataSource = DataSource.MSSQL;
 		public DataSourceType()
 		{
 			InitializeComponent();
@@ -15,6 +16,10 @@ namespace ReportWizardPrototype
 			tableLayoutDatabase.Controls.Add(msSql);
 			tableLayoutDatabase.SetColumn(msSql, 0);
 			tableLayoutDatabase.SetRow(msSql, 0);
+			msSql.OnClick += (sender, agrs) =>
+			{
+				_selectedDataSource = DataSource.MSSQL;
+			};
 
 			var mySql = BuildItem("ReportWizardPrototype.Resources.MySQL_small.png", "MySQL");
 			tableLayoutDatabase.Controls.Add(mySql);
@@ -66,6 +71,10 @@ namespace ReportWizardPrototype
 			tableLayoutWebApi.Controls.Add(jsonAPI);
 			tableLayoutWebApi.SetRow(jsonAPI, 0);
 			tableLayoutWebApi.SetColumn(jsonAPI, 0);
+			jsonAPI.OnClick += (sender, args) =>
+			{
+				this._selectedDataSource = DataSource.JSONAPI;
+			};
 
 			var objectDs = BuildItem("ReportWizardPrototype.Resources.object_small.png", "Object");
 			tableLayoutProgrammatic.Controls.Add(objectDs);
@@ -106,10 +115,25 @@ namespace ReportWizardPrototype
 
 		private void OnNext(object sender, EventArgs e)
 		{
-			this.Hide();
-			var msSqlConnDialog = new VSMSSQLConnection();
-			msSqlConnDialog.Show();
-			this.Close();
+			Hide();
+			switch (_selectedDataSource)
+			{
+				case DataSource.JSONAPI:
+					var webApiConnection = new WebAPIConnection();
+					webApiConnection.ShowDialog(this);
+					break;
+				case DataSource.MSSQL:
+					var msSqlConnDialog = new VSMSSQLConnection();
+					msSqlConnDialog.ShowDialog(this);
+					break;
+			}
+			Close();
 		}
+	}
+
+	internal enum DataSource
+	{
+		MSSQL,
+		JSONAPI
 	}
 }
