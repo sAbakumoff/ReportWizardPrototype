@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			panel1 = new Panel();
+			btnTestRequest = new Button();
 			btnCancel = new Button();
 			btnBack = new Button();
 			btnNext = new Button();
@@ -36,7 +37,7 @@
 			groupGeneral = new GroupBox();
 			tableLayoutPanel1 = new TableLayoutPanel();
 			label3 = new Label();
-			textBox1 = new TextBox();
+			txtURL = new TextBox();
 			linkLabel3 = new LinkLabel();
 			groupAuth = new GroupBox();
 			tableLayoutPanel3 = new TableLayoutPanel();
@@ -56,6 +57,7 @@
 			// panel1
 			// 
 			panel1.BackColor = SystemColors.Control;
+			panel1.Controls.Add(btnTestRequest);
 			panel1.Controls.Add(btnCancel);
 			panel1.Controls.Add(btnBack);
 			panel1.Controls.Add(btnNext);
@@ -64,6 +66,16 @@
 			panel1.Name = "panel1";
 			panel1.Size = new Size(661, 61);
 			panel1.TabIndex = 32;
+			// 
+			// btnTestRequest
+			// 
+			btnTestRequest.Location = new Point(18, 18);
+			btnTestRequest.Name = "btnTestRequest";
+			btnTestRequest.Size = new Size(126, 23);
+			btnTestRequest.TabIndex = 33;
+			btnTestRequest.Text = "Test Request";
+			btnTestRequest.UseVisualStyleBackColor = true;
+			btnTestRequest.Click += btnTestRequest_Click;
 			// 
 			// btnCancel
 			// 
@@ -93,6 +105,7 @@
 			btnNext.TabIndex = 30;
 			btnNext.Text = "Next >";
 			btnNext.UseVisualStyleBackColor = true;
+			btnNext.Click += btnNext_Click;
 			// 
 			// label6
 			// 
@@ -121,7 +134,7 @@
 			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
 			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
 			tableLayoutPanel1.Controls.Add(label3, 0, 0);
-			tableLayoutPanel1.Controls.Add(textBox1, 1, 0);
+			tableLayoutPanel1.Controls.Add(txtURL, 1, 0);
 			tableLayoutPanel1.Controls.Add(linkLabel3, 2, 0);
 			tableLayoutPanel1.Dock = DockStyle.Fill;
 			tableLayoutPanel1.Location = new Point(3, 19);
@@ -142,14 +155,14 @@
 			label3.Text = "URL:";
 			label3.TextAlign = ContentAlignment.MiddleLeft;
 			// 
-			// textBox1
+			// txtURL
 			// 
-			textBox1.Dock = DockStyle.Fill;
-			textBox1.Location = new Point(128, 3);
-			textBox1.Multiline = true;
-			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(369, 27);
-			textBox1.TabIndex = 1;
+			txtURL.Dock = DockStyle.Fill;
+			txtURL.Location = new Point(128, 3);
+			txtURL.Multiline = true;
+			txtURL.Name = "txtURL";
+			txtURL.Size = new Size(369, 27);
+			txtURL.TabIndex = 1;
 			// 
 			// linkLabel3
 			// 
@@ -169,7 +182,7 @@
 			groupAuth.Controls.Add(tableLayoutPanel3);
 			groupAuth.Location = new Point(18, 115);
 			groupAuth.Name = "groupAuth";
-			groupAuth.Size = new Size(631, 168);
+			groupAuth.Size = new Size(631, 159);
 			groupAuth.TabIndex = 48;
 			groupAuth.TabStop = false;
 			groupAuth.Text = "Request method";
@@ -192,7 +205,7 @@
 			tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
 			tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
 			tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-			tableLayoutPanel3.Size = new Size(625, 146);
+			tableLayoutPanel3.Size = new Size(625, 137);
 			tableLayoutPanel3.TabIndex = 0;
 			// 
 			// linkBodyParam
@@ -200,9 +213,9 @@
 			linkBodyParam.AutoSize = true;
 			linkBodyParam.Dock = DockStyle.Fill;
 			linkBodyParam.Enabled = false;
-			linkBodyParam.Location = new Point(503, 29);
+			linkBodyParam.Location = new Point(503, 27);
 			linkBodyParam.Name = "linkBodyParam";
-			linkBodyParam.Size = new Size(119, 58);
+			linkBodyParam.Size = new Size(119, 54);
 			linkBodyParam.TabIndex = 5;
 			linkBodyParam.TabStop = true;
 			linkBodyParam.Text = "Insert Parameter...";
@@ -213,11 +226,11 @@
 			// 
 			txtBody.Dock = DockStyle.Fill;
 			txtBody.Enabled = false;
-			txtBody.Location = new Point(128, 32);
+			txtBody.Location = new Point(128, 30);
 			txtBody.Multiline = true;
 			txtBody.Name = "txtBody";
 			tableLayoutPanel3.SetRowSpan(txtBody, 2);
-			txtBody.Size = new Size(369, 111);
+			txtBody.Size = new Size(369, 104);
 			txtBody.TabIndex = 4;
 			// 
 			// lblPostBody
@@ -225,9 +238,9 @@
 			lblPostBody.AutoSize = true;
 			lblPostBody.Dock = DockStyle.Fill;
 			lblPostBody.Enabled = false;
-			lblPostBody.Location = new Point(3, 29);
+			lblPostBody.Location = new Point(3, 27);
 			lblPostBody.Name = "lblPostBody";
-			lblPostBody.Size = new Size(119, 58);
+			lblPostBody.Size = new Size(119, 54);
 			lblPostBody.TabIndex = 2;
 			lblPostBody.Text = "POST Body:";
 			lblPostBody.TextAlign = ContentAlignment.MiddleLeft;
@@ -239,7 +252,7 @@
 			radioMethodGET.Dock = DockStyle.Fill;
 			radioMethodGET.Location = new Point(3, 3);
 			radioMethodGET.Name = "radioMethodGET";
-			radioMethodGET.Size = new Size(119, 23);
+			radioMethodGET.Size = new Size(119, 21);
 			radioMethodGET.TabIndex = 2;
 			radioMethodGET.TabStop = true;
 			radioMethodGET.Text = "GET";
@@ -252,7 +265,7 @@
 			radioMethodPost.Dock = DockStyle.Fill;
 			radioMethodPost.Location = new Point(128, 3);
 			radioMethodPost.Name = "radioMethodPost";
-			radioMethodPost.Size = new Size(369, 23);
+			radioMethodPost.Size = new Size(369, 21);
 			radioMethodPost.TabIndex = 3;
 			radioMethodPost.TabStop = true;
 			radioMethodPost.Text = "POST";
@@ -260,7 +273,7 @@
 			// 
 			// btnHeaders
 			// 
-			btnHeaders.Location = new Point(18, 303);
+			btnHeaders.Location = new Point(18, 294);
 			btnHeaders.Name = "btnHeaders";
 			btnHeaders.Size = new Size(126, 23);
 			btnHeaders.TabIndex = 5;
@@ -307,7 +320,7 @@
 		private GroupBox groupGeneral;
 		private TableLayoutPanel tableLayoutPanel1;
 		private Label label3;
-		private TextBox textBox1;
+		private TextBox txtURL;
 		private LinkLabel linkLabel3;
 		private GroupBox groupAuth;
 		private TableLayoutPanel tableLayoutPanel3;
@@ -317,5 +330,6 @@
 		private RadioButton radioMethodGET;
 		private RadioButton radioMethodPost;
 		private Button btnHeaders;
+		private Button btnTestRequest;
 	}
 }

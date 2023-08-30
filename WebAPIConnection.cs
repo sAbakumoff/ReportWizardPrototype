@@ -12,9 +12,14 @@ namespace ReportWizardPrototype
 {
 	public partial class WebAPIConnection : Form
 	{
+
 		public WebAPIConnection()
 		{
 			InitializeComponent();
+			this.Shown += (sender, args) =>
+			{
+				this.txtURL.Focus();
+			};
 		}
 
 		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -62,6 +67,55 @@ namespace ReportWizardPrototype
 		{
 			var httpHeaders = new HttpHeaders();
 			httpHeaders.ShowDialog(this);
+		}
+
+		private void btnNext_Click(object sender, EventArgs e)
+		{
+			Hide();
+			var dataSetDialog = new WebAPIDataSets();
+			dataSetDialog.ShowDialog(this);
+			Close();
+		}
+
+		private async void btnTestRequest_Click(object sender, EventArgs e)
+		{
+			UseWaitCursor = true;
+			foreach (Control ctrl in Controls)
+			{
+				if (ctrl.Name == "btnCancel")
+					continue;
+				ctrl.Enabled = false;
+			}
+
+
+			// Simulate some asynchronous work
+			bool error = await ValidateRoutine();
+
+			// Restore the cursor and re-enable the UI
+			this.UseWaitCursor = false;
+
+			foreach (Control ctrl in Controls)
+			{
+				if (ctrl.Name == "btnCancel")
+					continue;
+				ctrl.Enabled = true;
+			}
+
+			if (error)
+			{
+				var errorForm = new ErrorForm();
+				errorForm.GeneralMessage = $"An error occurred while executing Web API request";
+				errorForm.ShowDialog(this);
+			}
+			else
+			{
+				MessageBox.Show("Request executed successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+		}
+		private async Task<bool> ValidateRoutine()
+		{
+			await Task.Delay(500);
+			return PrototypeSettings.QueryError;
 		}
 	}
 }
