@@ -31,19 +31,19 @@ namespace ReportWizardPrototype
 			tableLayoutDatabase.SetColumn(sqlIte, 2);
 			tableLayoutDatabase.SetRow(sqlIte, 0);
 
-			var oracle = BuildItem("ReportWizardPrototype.Resources.oracle_small.png", "Oracle");
-			tableLayoutDatabase.Controls.Add(oracle);
-			tableLayoutDatabase.SetColumn(oracle, 3);
-			tableLayoutDatabase.SetRow(oracle, 0);
+			//var oracle = BuildItem("ReportWizardPrototype.Resources.oracle_small.png", "Oracle");
+			//tableLayoutDatabase.Controls.Add(oracle);
+			//tableLayoutDatabase.SetColumn(oracle, 3);
+			//tableLayoutDatabase.SetRow(oracle, 0);
 
 			var postgres = BuildItem("ReportWizardPrototype.Resources.PostgreSQL_small.png", "PostgreSQL");
 			tableLayoutDatabase.Controls.Add(postgres);
-			tableLayoutDatabase.SetColumn(postgres, 0);
-			tableLayoutDatabase.SetRow(postgres, 1);
+			tableLayoutDatabase.SetColumn(postgres, 3);
+			tableLayoutDatabase.SetRow(postgres, 0);
 
 			var access = BuildItem("ReportWizardPrototype.Resources.MSAccess_small.png", "MS Access");
 			tableLayoutDatabase.Controls.Add(access);
-			tableLayoutDatabase.SetColumn(access, 1);
+			tableLayoutDatabase.SetColumn(access, 0);
 			tableLayoutDatabase.SetRow(access, 1);
 
 
