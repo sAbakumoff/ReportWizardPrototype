@@ -25,6 +25,10 @@ namespace ReportWizardPrototype
 			tableLayoutDatabase.Controls.Add(mySql);
 			tableLayoutDatabase.SetColumn(mySql, 1);
 			tableLayoutDatabase.SetRow(mySql, 0);
+			mySql.OnClick += (sender, agrs) =>
+			{
+				_selectedDataSource = DataSource.MYSQL;
+			};
 
 			var sqlIte = BuildItem("ReportWizardPrototype.Resources.sqlite_small.png", "SQLite");
 			tableLayoutDatabase.Controls.Add(sqlIte);
@@ -126,6 +130,10 @@ namespace ReportWizardPrototype
 					var msSqlConnDialog = new VSMSSQLConnection();
 					msSqlConnDialog.ShowDialog(this);
 					break;
+				case DataSource.MYSQL:
+					var mysqlConnDialog = new MySQLConnection();
+					mysqlConnDialog.ShowDialog(this);
+					break;
 			}
 			Close();
 		}
@@ -134,6 +142,7 @@ namespace ReportWizardPrototype
 	internal enum DataSource
 	{
 		MSSQL,
-		JSONAPI
+		JSONAPI,
+		MYSQL
 	}
 }

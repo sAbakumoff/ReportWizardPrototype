@@ -18,7 +18,7 @@ namespace ReportWizardPrototype.VSUI
 				groupGeneral.Top -= reducedLocation;
 				groupAuth.Top -= reducedLocation;
 				btnAdvanced.Top -= reducedLocation;
-				btnTestConnection.Top -= reducedLocation;
+				// btnTestConnection.Top -= reducedLocation;
 				groupAuth.Visible = groupGeneral.Visible = btnAdvanced.Visible = true;
 			}
 		}
@@ -72,7 +72,7 @@ namespace ReportWizardPrototype.VSUI
 		}
 		private async Task<bool> ConnectionRoutine()
 		{
-			await Task.Delay(2000);
+			await Task.Delay(500);
 			return PrototypeSettings.ConnectionError;
 		}
 
@@ -89,18 +89,10 @@ namespace ReportWizardPrototype.VSUI
 
 		private void btnNext_Click(object sender, EventArgs e)
 		{
-			this.Hide();
-			if (PrototypeSettings.IsRDLX)
-			{
-				var datasetsDialog = new DataSetRDLX();
-				datasetsDialog.ShowDialog(this);
-			}
-			else
-			{
-				var rpxQueryDialog = new DataSetRPX();
-				rpxQueryDialog.ShowDialog(this);
-			}
-			this.Close();
+			Hide();
+			var datasetsDialog = new DataSetRDLX();
+			datasetsDialog.ShowDialog(this);
+			Close();
 		}
 	}
 }
