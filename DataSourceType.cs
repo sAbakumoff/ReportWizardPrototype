@@ -44,6 +44,10 @@ namespace ReportWizardPrototype
 			tableLayoutDatabase.Controls.Add(postgres);
 			tableLayoutDatabase.SetColumn(postgres, 3);
 			tableLayoutDatabase.SetRow(postgres, 0);
+			postgres.OnClick += (sender, args) =>
+			{
+				_selectedDataSource = DataSource.PostgreSQL;
+			};
 
 			var access = BuildItem("ReportWizardPrototype.Resources.MSAccess_small.png", "MS Access");
 			tableLayoutDatabase.Controls.Add(access);
@@ -132,8 +136,17 @@ namespace ReportWizardPrototype
 					break;
 				case DataSource.MYSQL:
 					var mysqlConnDialog = new MySQLConnection();
+					mysqlConnDialog.Title = "Confgure MySQL Server Connection";
+					mysqlConnDialog.DefaultPort = "3306";
 					mysqlConnDialog.ShowDialog(this);
 					break;
+				case DataSource.PostgreSQL:
+					var postgresConnDialog = new MySQLConnection();
+					postgresConnDialog.Title = "Confgure PostgreSQL Server Connection";
+					postgresConnDialog.DefaultPort = "5432";
+					postgresConnDialog.ShowDialog(this);
+					break;
+
 			}
 			Close();
 		}
@@ -143,6 +156,7 @@ namespace ReportWizardPrototype
 	{
 		MSSQL,
 		JSONAPI,
-		MYSQL
+		MYSQL,
+		PostgreSQL
 	}
 }

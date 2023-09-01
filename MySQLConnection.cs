@@ -94,5 +94,23 @@
 			groupAuth.Visible = groupGeneral.Visible = radioManual.Checked;
 			txtConnStringName.Enabled = radioAppConfig.Checked;
 		}
+
+		public string Title
+		{
+			get
+			{
+				return lblTitle.Text;
+			}
+			set
+			{
+				lblTitle.Text = value;
+			}
+		}
+
+		public string DefaultPort
+		{
+			get { return txtPort.Text; }
+			set { txtPort.Text = value; }
+		}
 	}
 }

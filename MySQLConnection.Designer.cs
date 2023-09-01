@@ -44,7 +44,7 @@
 			groupGeneral = new GroupBox();
 			tableLayoutPanel2 = new TableLayoutPanel();
 			linkLabel3 = new LinkLabel();
-			textBox1 = new TextBox();
+			txtPort = new TextBox();
 			label7 = new Label();
 			linkLabel2 = new LinkLabel();
 			label2 = new Label();
@@ -58,7 +58,7 @@
 			radioManual = new RadioButton();
 			label1 = new Label();
 			txtConnStringName = new TextBox();
-			label6 = new Label();
+			lblTitle = new Label();
 			panel1.SuspendLayout();
 			groupAuth.SuspendLayout();
 			tableLayoutPanel3.SuspendLayout();
@@ -235,7 +235,7 @@
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 65F));
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
 			tableLayoutPanel2.Controls.Add(linkLabel3, 2, 2);
-			tableLayoutPanel2.Controls.Add(textBox1, 1, 2);
+			tableLayoutPanel2.Controls.Add(txtPort, 1, 2);
 			tableLayoutPanel2.Controls.Add(label7, 0, 2);
 			tableLayoutPanel2.Controls.Add(linkLabel2, 2, 1);
 			tableLayoutPanel2.Controls.Add(label2, 0, 0);
@@ -265,15 +265,15 @@
 			linkLabel3.Text = "Parameter...";
 			linkLabel3.TextAlign = ContentAlignment.MiddleLeft;
 			// 
-			// textBox1
+			// txtPort
 			// 
-			textBox1.Dock = DockStyle.Fill;
-			textBox1.Location = new Point(128, 63);
-			textBox1.Multiline = true;
-			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(400, 25);
-			textBox1.TabIndex = 7;
-			textBox1.Text = "3306";
+			txtPort.Dock = DockStyle.Fill;
+			txtPort.Location = new Point(128, 63);
+			txtPort.Multiline = true;
+			txtPort.Name = "txtPort";
+			txtPort.Size = new Size(400, 25);
+			txtPort.TabIndex = 7;
+			txtPort.Text = "3306";
 			// 
 			// label7
 			// 
@@ -425,15 +425,15 @@
 			txtConnStringName.Size = new Size(432, 27);
 			txtConnStringName.TabIndex = 3;
 			// 
-			// label6
+			// lblTitle
 			// 
-			label6.AutoSize = true;
-			label6.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-			label6.Location = new Point(18, 9);
-			label6.Name = "label6";
-			label6.Size = new Size(231, 19);
-			label6.TabIndex = 36;
-			label6.Text = "Confgure MySQL Server Connection";
+			lblTitle.AutoSize = true;
+			lblTitle.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+			lblTitle.Location = new Point(18, 9);
+			lblTitle.Name = "lblTitle";
+			lblTitle.Size = new Size(231, 19);
+			lblTitle.TabIndex = 36;
+			lblTitle.Text = "Confgure MySQL Server Connection";
 			// 
 			// MySQLConnection
 			// 
@@ -441,7 +441,7 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = SystemColors.ControlLightLight;
 			ClientSize = new Size(661, 522);
-			Controls.Add(label6);
+			Controls.Add(lblTitle);
 			Controls.Add(groupAuth);
 			Controls.Add(groupGeneral);
 			Controls.Add(groupBox1);
@@ -496,8 +496,8 @@
 		private RadioButton radioManual;
 		private Label label1;
 		private TextBox txtConnStringName;
-		private Label label6;
-		private TextBox textBox1;
+		private Label lblTitle;
+		private TextBox txtPort;
 		private Label label7;
 		private LinkLabel linkLabel3;
 	}
