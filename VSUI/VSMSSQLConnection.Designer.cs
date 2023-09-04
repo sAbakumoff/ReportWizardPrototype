@@ -74,7 +74,7 @@
 			groupBox1.Location = new Point(18, 40);
 			groupBox1.Name = "groupBox1";
 			groupBox1.Size = new Size(631, 122);
-			groupBox1.TabIndex = 0;
+			groupBox1.TabIndex = 1;
 			groupBox1.TabStop = false;
 			// 
 			// tableLayoutPanel1
@@ -118,7 +118,7 @@
 			radioManual.Location = new Point(3, 69);
 			radioManual.Name = "radioManual";
 			radioManual.Size = new Size(619, 28);
-			radioManual.TabIndex = 1;
+			radioManual.TabIndex = 3;
 			radioManual.Text = "Manually Specify Connection String";
 			radioManual.UseVisualStyleBackColor = true;
 			radioManual.CheckedChanged += radioButton2_CheckedChanged;
@@ -130,7 +130,7 @@
 			label1.Location = new Point(3, 33);
 			label1.Name = "label1";
 			label1.Size = new Size(181, 33);
-			label1.TabIndex = 2;
+			label1.TabIndex = 1;
 			label1.Text = "Connection String Name:";
 			label1.TextAlign = ContentAlignment.MiddleLeft;
 			// 
@@ -141,7 +141,7 @@
 			txtConnStringName.Multiline = true;
 			txtConnStringName.Name = "txtConnStringName";
 			txtConnStringName.Size = new Size(432, 27);
-			txtConnStringName.TabIndex = 3;
+			txtConnStringName.TabIndex = 2;
 			// 
 			// groupGeneral
 			// 
@@ -149,7 +149,7 @@
 			groupGeneral.Location = new Point(18, 182);
 			groupGeneral.Name = "groupGeneral";
 			groupGeneral.Size = new Size(631, 90);
-			groupGeneral.TabIndex = 1;
+			groupGeneral.TabIndex = 2;
 			groupGeneral.TabStop = false;
 			groupGeneral.Text = "General";
 			groupGeneral.Visible = false;
@@ -214,7 +214,7 @@
 			label3.Location = new Point(3, 34);
 			label3.Name = "label3";
 			label3.Size = new Size(119, 34);
-			label3.TabIndex = 2;
+			label3.TabIndex = 3;
 			label3.Text = "Database:";
 			label3.TextAlign = ContentAlignment.MiddleLeft;
 			// 
@@ -225,7 +225,7 @@
 			textBox3.Multiline = true;
 			textBox3.Name = "textBox3";
 			textBox3.Size = new Size(400, 28);
-			textBox3.TabIndex = 3;
+			textBox3.TabIndex = 4;
 			// 
 			// linkLabel1
 			// 
@@ -234,7 +234,7 @@
 			linkLabel1.Location = new Point(534, 0);
 			linkLabel1.Name = "linkLabel1";
 			linkLabel1.Size = new Size(88, 34);
-			linkLabel1.TabIndex = 4;
+			linkLabel1.TabIndex = 2;
 			linkLabel1.TabStop = true;
 			linkLabel1.Text = "Parameter...";
 			linkLabel1.TextAlign = ContentAlignment.MiddleLeft;
@@ -245,7 +245,7 @@
 			groupAuth.Location = new Point(18, 292);
 			groupAuth.Name = "groupAuth";
 			groupAuth.Size = new Size(631, 113);
-			groupAuth.TabIndex = 2;
+			groupAuth.TabIndex = 3;
 			groupAuth.TabStop = false;
 			groupAuth.Text = "Authentication";
 			groupAuth.Visible = false;
@@ -281,7 +281,7 @@
 			linkPwdParam.Location = new Point(534, 60);
 			linkPwdParam.Name = "linkPwdParam";
 			linkPwdParam.Size = new Size(88, 31);
-			linkPwdParam.TabIndex = 8;
+			linkPwdParam.TabIndex = 7;
 			linkPwdParam.TabStop = true;
 			linkPwdParam.Text = "Parameter...";
 			linkPwdParam.TextAlign = ContentAlignment.MiddleLeft;
@@ -293,7 +293,7 @@
 			txtPwd.Multiline = true;
 			txtPwd.Name = "txtPwd";
 			txtPwd.Size = new Size(400, 25);
-			txtPwd.TabIndex = 7;
+			txtPwd.TabIndex = 6;
 			// 
 			// label5
 			// 
@@ -302,7 +302,7 @@
 			label5.Location = new Point(3, 60);
 			label5.Name = "label5";
 			label5.Size = new Size(119, 31);
-			label5.TabIndex = 6;
+			label5.TabIndex = 5;
 			label5.Text = "Password:";
 			label5.TextAlign = ContentAlignment.MiddleLeft;
 			// 
@@ -313,7 +313,7 @@
 			linkUserNameParam.Location = new Point(534, 30);
 			linkUserNameParam.Name = "linkUserNameParam";
 			linkUserNameParam.Size = new Size(88, 30);
-			linkUserNameParam.TabIndex = 5;
+			linkUserNameParam.TabIndex = 4;
 			linkUserNameParam.TabStop = true;
 			linkUserNameParam.Text = "Parameter...";
 			linkUserNameParam.TextAlign = ContentAlignment.MiddleLeft;
@@ -325,7 +325,7 @@
 			txtUserName.Multiline = true;
 			txtUserName.Name = "txtUserName";
 			txtUserName.Size = new Size(400, 24);
-			txtUserName.TabIndex = 4;
+			txtUserName.TabIndex = 3;
 			// 
 			// label4
 			// 
@@ -358,7 +358,7 @@
 			radioAuthWindows.Location = new Point(128, 3);
 			radioAuthWindows.Name = "radioAuthWindows";
 			radioAuthWindows.Size = new Size(400, 24);
-			radioAuthWindows.TabIndex = 9;
+			radioAuthWindows.TabIndex = 1;
 			radioAuthWindows.TabStop = true;
 			radioAuthWindows.Text = "Windows";
 			radioAuthWindows.UseVisualStyleBackColor = true;
@@ -369,7 +369,7 @@
 			btnTestConnection.Location = new Point(18, 18);
 			btnTestConnection.Name = "btnTestConnection";
 			btnTestConnection.Size = new Size(126, 23);
-			btnTestConnection.TabIndex = 26;
+			btnTestConnection.TabIndex = 0;
 			btnTestConnection.Text = "Test connection";
 			btnTestConnection.UseVisualStyleBackColor = true;
 			btnTestConnection.Click += btnTestConnection_Click;
@@ -379,7 +379,7 @@
 			btnAdvanced.Location = new Point(18, 419);
 			btnAdvanced.Name = "btnAdvanced";
 			btnAdvanced.Size = new Size(126, 23);
-			btnAdvanced.TabIndex = 30;
+			btnAdvanced.TabIndex = 4;
 			btnAdvanced.Text = "Advanced...";
 			btnAdvanced.UseVisualStyleBackColor = true;
 			btnAdvanced.Visible = false;
@@ -403,7 +403,7 @@
 			btnCancel.Location = new Point(574, 18);
 			btnCancel.Name = "btnCancel";
 			btnCancel.Size = new Size(75, 23);
-			btnCancel.TabIndex = 32;
+			btnCancel.TabIndex = 3;
 			btnCancel.Text = "Cancel";
 			btnCancel.UseVisualStyleBackColor = true;
 			btnCancel.Click += btnCancel_Click;
@@ -413,7 +413,7 @@
 			btnBack.Location = new Point(412, 18);
 			btnBack.Name = "btnBack";
 			btnBack.Size = new Size(75, 23);
-			btnBack.TabIndex = 31;
+			btnBack.TabIndex = 1;
 			btnBack.Text = "< Back";
 			btnBack.UseVisualStyleBackColor = true;
 			btnBack.Click += btnBack_Click;
@@ -423,7 +423,7 @@
 			btnNext.Location = new Point(493, 18);
 			btnNext.Name = "btnNext";
 			btnNext.Size = new Size(75, 23);
-			btnNext.TabIndex = 30;
+			btnNext.TabIndex = 2;
 			btnNext.Text = "Next >";
 			btnNext.UseVisualStyleBackColor = true;
 			btnNext.Click += btnNext_Click;
@@ -435,7 +435,7 @@
 			label6.Location = new Point(18, 9);
 			label6.Name = "label6";
 			label6.Size = new Size(235, 19);
-			label6.TabIndex = 32;
+			label6.TabIndex = 0;
 			label6.Text = "Confgure MS SQL Server Connection";
 			// 
 			// VSMSSQLConnection

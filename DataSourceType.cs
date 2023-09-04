@@ -1,6 +1,7 @@
 ﻿using ReportWizardPrototype.VSUI;
 using System.ComponentModel;
 using System.Reflection;
+using System.Xml.Xsl;
 
 namespace ReportWizardPrototype
 {
@@ -74,11 +75,14 @@ namespace ReportWizardPrototype
 			tableLayoutFile.SetRow(xml, 0);
 			tableLayoutFile.SetColumn(xml, 2);
 
-			var xls = BuildItem("ReportWizardPrototype.Resources.XLS_small.png", "XLS");
+			var xls = BuildItem("ReportWizardPrototype.Resources.XLS_small.png", "Excel");
 			tableLayoutFile.Controls.Add(xls);
 			tableLayoutFile.SetRow(xls, 0);
 			tableLayoutFile.SetColumn(xls, 3);
-
+			xls.OnClick += (sender, args) =>
+			{
+				this._selectedDataSource = DataSource.ExcelFile;
+			};
 			var jsonAPI = BuildItem("ReportWizardPrototype.Resources.json_api_small.png", "JSON API");
 			tableLayoutWebApi.Controls.Add(jsonAPI);
 			tableLayoutWebApi.SetRow(jsonAPI, 0);
@@ -174,7 +178,22 @@ namespace ReportWizardPrototype
 					};
 					sqlLiteConnDialog.ShowDialog(this);
 					break;
-
+				case DataSource.ExcelFile:
+					var excelConn = new FileConnection
+					{
+						Title = "Configure Excel Workbook connection",
+						PasswordVisible = false,
+						PathLabelText = "File path:",
+						TestConnectionVisible = false,
+						ConfigConnectionStringEnabled = false
+					};
+					excelConn.OnNextClicked += (sender, args) =>
+					{
+						var excelDataSet = new ExcelDataSets();
+						excelDataSet.ShowDialog(this);
+					};
+					excelConn.ShowDialog(this);
+					break;
 			}
 			Close();
 		}
@@ -186,6 +205,8 @@ namespace ReportWizardPrototype
 		JSONAPI,
 		MYSQL,
 		PostgreSQL,
-		SQLite
+		SQLite,
+		ExcelFile
+
 	}
 }
