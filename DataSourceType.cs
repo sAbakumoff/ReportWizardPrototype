@@ -34,6 +34,10 @@ namespace ReportWizardPrototype
 			tableLayoutDatabase.Controls.Add(sqlIte);
 			tableLayoutDatabase.SetColumn(sqlIte, 2);
 			tableLayoutDatabase.SetRow(sqlIte, 0);
+			sqlIte.OnClick += (sender, agrs) =>
+			{
+				_selectedDataSource = DataSource.SQLite;
+			};
 
 			//var oracle = BuildItem("ReportWizardPrototype.Resources.oracle_small.png", "Oracle");
 			//tableLayoutDatabase.Controls.Add(oracle);
@@ -135,16 +139,40 @@ namespace ReportWizardPrototype
 					msSqlConnDialog.ShowDialog(this);
 					break;
 				case DataSource.MYSQL:
-					var mysqlConnDialog = new MySQLConnection();
-					mysqlConnDialog.Title = "Confgure MySQL Server Connection";
-					mysqlConnDialog.DefaultPort = "3306";
+					var mysqlConnDialog = new MySQLConnection
+					{
+						Title = "Confgure MySQL Server Connection",
+						DefaultPort = "3306"
+					};
 					mysqlConnDialog.ShowDialog(this);
 					break;
 				case DataSource.PostgreSQL:
-					var postgresConnDialog = new MySQLConnection();
-					postgresConnDialog.Title = "Confgure PostgreSQL Server Connection";
-					postgresConnDialog.DefaultPort = "5432";
+					var postgresConnDialog = new MySQLConnection
+					{
+						Title = "Confgure PostgreSQL Server Connection",
+						DefaultPort = "5432"
+					};
 					postgresConnDialog.ShowDialog(this);
+					break;
+				case DataSource.SQLite:
+					var sqlLiteConnDialog = new FileConnection
+					{
+						Title = "Confgure SQLite Connection",
+						PasswordVisible = true,
+						PathLabelText = "Database path:",
+						TestConnectionVisible = true,
+						ConfigConnectionStringEnabled = true
+					};
+					sqlLiteConnDialog.OnNextClicked += (sender, args) =>
+					{
+						var datasetsDialog = new DataSetRDLX();
+						datasetsDialog.OnBack += (sender, args) =>
+						{
+							sqlLiteConnDialog.Show();
+						};
+						datasetsDialog.ShowDialog(this);
+					};
+					sqlLiteConnDialog.ShowDialog(this);
 					break;
 
 			}
@@ -157,6 +185,7 @@ namespace ReportWizardPrototype
 		MSSQL,
 		JSONAPI,
 		MYSQL,
-		PostgreSQL
+		PostgreSQL,
+		SQLite
 	}
 }

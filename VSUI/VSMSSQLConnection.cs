@@ -91,8 +91,12 @@ namespace ReportWizardPrototype.VSUI
 		{
 			Hide();
 			var datasetsDialog = new DataSetRDLX();
+			datasetsDialog.OnBack += (sender, args) =>
+			{
+				Show();
+			};
 			datasetsDialog.ShowDialog(this);
-			Close();
+			// Close();
 		}
 	}
 }

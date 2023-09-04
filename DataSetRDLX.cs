@@ -5,6 +5,7 @@ namespace ReportWizardPrototype
 	public partial class DataSetRDLX : Form
 	{
 		private int _counter = 2;
+		public event EventHandler OnBack;
 		public DataSetRDLX()
 		{
 			InitializeComponent();
@@ -14,8 +15,12 @@ namespace ReportWizardPrototype
 		private void btnBack_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			var connDialog = new VSMSSQLConnection();
-			connDialog.ShowDialog(this);
+			//var connDialog = new VSMSSQLConnection();
+			//connDialog.ShowDialog(this);
+			if(this.OnBack != null)
+			{
+				OnBack(this, EventArgs.Empty);
+			}
 			this.Close();
 
 		}
