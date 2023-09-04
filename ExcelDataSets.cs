@@ -18,6 +18,33 @@ namespace ReportWizardPrototype
 			InitializeComponent();
 			listSheets.SelectedIndex = 0;
 			listBox1.SelectedIndex = 0;
+			optionRange.CheckedChanged += OnOptionChanged;
+			optionSheet.CheckedChanged += OnOptionChanged;
+			optionTable.CheckedChanged += OnOptionChanged;
+		}
+
+		private void OnOptionChanged(object? sender, EventArgs e)
+		{
+			listSheets.Items.Clear();
+			if (optionRange.Checked)
+			{
+				listSheets.Items.Add("Named Range$1");
+				listSheets.Items.Add("Named Range$2");
+				listSheets.Items.Add("Named Range$3");
+			}
+			if (optionSheet.Checked)
+			{
+				listSheets.Items.Add("Sheet$1");
+				listSheets.Items.Add("Sheet$2");
+				listSheets.Items.Add("Sheet$3");
+			}
+			if (optionTable.Checked)
+			{
+				listSheets.Items.Add("Table$1");
+				listSheets.Items.Add("Table$2");
+				listSheets.Items.Add("Table$3");
+			}
+			listSheets.SelectedIndex = 0;
 		}
 
 		private void btnCancel_Click(object sender, EventArgs e)

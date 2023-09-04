@@ -38,8 +38,14 @@
 			listBox1 = new ListBox();
 			textBox2 = new TextBox();
 			label1 = new Label();
-			label2 = new Label();
 			listSheets = new ListBox();
+			optionRange = new RadioButton();
+			optionSheet = new RadioButton();
+			optionTable = new RadioButton();
+			optHeaderRow = new CheckBox();
+			checkBox1 = new CheckBox();
+			checkBox2 = new CheckBox();
+			checkBox3 = new CheckBox();
 			panel1.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -67,6 +73,7 @@
 			// 
 			// btnBack
 			// 
+			btnBack.FlatStyle = FlatStyle.System;
 			btnBack.Location = new Point(412, 18);
 			btnBack.Name = "btnBack";
 			btnBack.Size = new Size(75, 23);
@@ -143,24 +150,96 @@
 			label1.TabIndex = 4;
 			label1.Text = "Name:";
 			// 
-			// label2
-			// 
-			label2.AutoSize = true;
-			label2.Location = new Point(251, 108);
-			label2.Name = "label2";
-			label2.Size = new Size(39, 15);
-			label2.TabIndex = 6;
-			label2.Text = "Sheet:";
-			// 
 			// listSheets
 			// 
 			listSheets.FormattingEnabled = true;
 			listSheets.ItemHeight = 15;
 			listSheets.Items.AddRange(new object[] { "Sheet$1", "Sheet$2", "Sheet$3", "Sheet$4" });
-			listSheets.Location = new Point(299, 108);
+			listSheets.Location = new Point(251, 123);
 			listSheets.Name = "listSheets";
-			listSheets.Size = new Size(350, 274);
-			listSheets.TabIndex = 7;
+			listSheets.Size = new Size(398, 199);
+			listSheets.TabIndex = 9;
+			// 
+			// optionRange
+			// 
+			optionRange.AutoSize = true;
+			optionRange.FlatStyle = FlatStyle.System;
+			optionRange.Location = new Point(317, 90);
+			optionRange.Name = "optionRange";
+			optionRange.Size = new Size(106, 20);
+			optionRange.TabIndex = 7;
+			optionRange.TabStop = true;
+			optionRange.Text = "Named Range";
+			optionRange.UseVisualStyleBackColor = true;
+			// 
+			// optionSheet
+			// 
+			optionSheet.AutoSize = true;
+			optionSheet.Checked = true;
+			optionSheet.FlatStyle = FlatStyle.System;
+			optionSheet.Location = new Point(251, 90);
+			optionSheet.Name = "optionSheet";
+			optionSheet.Size = new Size(60, 20);
+			optionSheet.TabIndex = 6;
+			optionSheet.TabStop = true;
+			optionSheet.Text = "Sheet";
+			optionSheet.UseVisualStyleBackColor = true;
+			// 
+			// optionTable
+			// 
+			optionTable.AutoSize = true;
+			optionTable.FlatStyle = FlatStyle.System;
+			optionTable.Location = new Point(435, 90);
+			optionTable.Name = "optionTable";
+			optionTable.Size = new Size(58, 20);
+			optionTable.TabIndex = 8;
+			optionTable.TabStop = true;
+			optionTable.Text = "Table";
+			optionTable.UseVisualStyleBackColor = true;
+			// 
+			// optHeaderRow
+			// 
+			optHeaderRow.Checked = true;
+			optHeaderRow.CheckState = CheckState.Checked;
+			optHeaderRow.FlatStyle = FlatStyle.System;
+			optHeaderRow.Location = new Point(251, 328);
+			optHeaderRow.Name = "optHeaderRow";
+			optHeaderRow.Size = new Size(221, 24);
+			optHeaderRow.TabIndex = 10;
+			optHeaderRow.Text = "Read field names from the first row";
+			// 
+			// checkBox1
+			// 
+			checkBox1.Checked = true;
+			checkBox1.CheckState = CheckState.Checked;
+			checkBox1.FlatStyle = FlatStyle.System;
+			checkBox1.Location = new Point(251, 358);
+			checkBox1.Name = "checkBox1";
+			checkBox1.Size = new Size(221, 24);
+			checkBox1.TabIndex = 11;
+			checkBox1.Text = "Skip empty rows";
+			// 
+			// checkBox2
+			// 
+			checkBox2.Checked = true;
+			checkBox2.CheckState = CheckState.Checked;
+			checkBox2.FlatStyle = FlatStyle.System;
+			checkBox2.Location = new Point(478, 358);
+			checkBox2.Name = "checkBox2";
+			checkBox2.Size = new Size(171, 24);
+			checkBox2.TabIndex = 13;
+			checkBox2.Text = "Skip hidden rows";
+			// 
+			// checkBox3
+			// 
+			checkBox3.Checked = true;
+			checkBox3.CheckState = CheckState.Checked;
+			checkBox3.FlatStyle = FlatStyle.System;
+			checkBox3.Location = new Point(478, 328);
+			checkBox3.Name = "checkBox3";
+			checkBox3.Size = new Size(171, 24);
+			checkBox3.TabIndex = 12;
+			checkBox3.Text = "Skip hidden columns";
 			// 
 			// ExcelDataSets
 			// 
@@ -168,8 +247,13 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = SystemColors.ControlLightLight;
 			ClientSize = new Size(661, 522);
+			Controls.Add(checkBox3);
+			Controls.Add(checkBox2);
+			Controls.Add(checkBox1);
+			Controls.Add(optionTable);
+			Controls.Add(optionRange);
+			Controls.Add(optionSheet);
 			Controls.Add(listSheets);
-			Controls.Add(label2);
 			Controls.Add(textBox2);
 			Controls.Add(label1);
 			Controls.Add(button2);
@@ -177,6 +261,7 @@
 			Controls.Add(listBox1);
 			Controls.Add(label6);
 			Controls.Add(panel1);
+			Controls.Add(optHeaderRow);
 			FormBorderStyle = FormBorderStyle.FixedSingle;
 			MaximizeBox = false;
 			MinimizeBox = false;
@@ -201,7 +286,13 @@
 		private ListBox listBox1;
 		private TextBox textBox2;
 		private Label label1;
-		private Label label2;
 		private ListBox listSheets;
+		private RadioButton optionRange;
+		private RadioButton optionSheet;
+		private RadioButton optionTable;
+		private CheckBox optHeaderRow;
+		private CheckBox checkBox1;
+		private CheckBox checkBox2;
+		private CheckBox checkBox3;
 	}
 }
