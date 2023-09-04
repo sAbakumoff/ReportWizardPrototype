@@ -52,7 +52,7 @@
 			// 
 			groupFile.Controls.Add(tableLayoutFile);
 			groupFile.FlatStyle = FlatStyle.System;
-			groupFile.Location = new Point(18, 190);
+			groupFile.Location = new Point(18, 145);
 			groupFile.Name = "groupFile";
 			groupFile.Padding = new Padding(3, 3, 3, 6);
 			groupFile.Size = new Size(631, 75);
@@ -82,7 +82,7 @@
 			// 
 			groupBox1.Controls.Add(tableLayoutWebApi);
 			groupBox1.FlatStyle = FlatStyle.System;
-			groupBox1.Location = new Point(18, 280);
+			groupBox1.Location = new Point(18, 235);
 			groupBox1.Name = "groupBox1";
 			groupBox1.Padding = new Padding(3, 3, 3, 6);
 			groupBox1.Size = new Size(631, 75);
@@ -112,7 +112,7 @@
 			// 
 			groupBox2.Controls.Add(tableLayoutProgrammatic);
 			groupBox2.FlatStyle = FlatStyle.System;
-			groupBox2.Location = new Point(18, 370);
+			groupBox2.Location = new Point(18, 325);
 			groupBox2.Name = "groupBox2";
 			groupBox2.Padding = new Padding(3, 3, 3, 6);
 			groupBox2.Size = new Size(631, 75);
@@ -197,7 +197,7 @@
 			groupBox3.Location = new Point(18, 54);
 			groupBox3.Name = "groupBox3";
 			groupBox3.Padding = new Padding(3, 3, 3, 6);
-			groupBox3.Size = new Size(631, 120);
+			groupBox3.Size = new Size(631, 75);
 			groupBox3.TabIndex = 1;
 			groupBox3.TabStop = false;
 			groupBox3.Text = "Database";
@@ -214,11 +214,10 @@
 			tableLayoutDatabase.Dock = DockStyle.Fill;
 			tableLayoutDatabase.Location = new Point(3, 19);
 			tableLayoutDatabase.Name = "tableLayoutDatabase";
-			tableLayoutDatabase.RowCount = 2;
-			tableLayoutDatabase.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+			tableLayoutDatabase.RowCount = 1;
 			tableLayoutDatabase.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
 			tableLayoutDatabase.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-			tableLayoutDatabase.Size = new Size(625, 95);
+			tableLayoutDatabase.Size = new Size(625, 50);
 			tableLayoutDatabase.TabIndex = 35;
 			// 
 			// DataSourceType

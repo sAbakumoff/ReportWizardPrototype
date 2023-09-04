@@ -53,10 +53,10 @@ namespace ReportWizardPrototype
 				_selectedDataSource = DataSource.PostgreSQL;
 			};
 
-			var access = BuildItem("ReportWizardPrototype.Resources.MSAccess_small.png", "MS Access");
-			tableLayoutDatabase.Controls.Add(access);
-			tableLayoutDatabase.SetColumn(access, 0);
-			tableLayoutDatabase.SetRow(access, 1);
+			//var access = BuildItem("ReportWizardPrototype.Resources.MSAccess_small.png", "MS Access");
+			//tableLayoutDatabase.Controls.Add(access);
+			//tableLayoutDatabase.SetColumn(access, 0);
+			//tableLayoutDatabase.SetRow(access, 1);
 
 
 			var csv = BuildItem("ReportWizardPrototype.Resources.CSV_small.png", "CSV");
