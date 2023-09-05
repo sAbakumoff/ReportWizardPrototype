@@ -64,6 +64,10 @@ namespace ReportWizardPrototype
 			tableLayoutFile.Controls.Add(csv);
 			tableLayoutFile.SetRow(msSql, 0);
 			tableLayoutFile.SetColumn(msSql, 0);
+			csv.OnClick += (sender, args) =>
+			{
+				_selectedDataSource = DataSource.CSVFile;
+			};
 
 			var json = BuildItem("ReportWizardPrototype.Resources.JSON_small.png", "JSON");
 			tableLayoutFile.Controls.Add(json);
@@ -204,7 +208,7 @@ namespace ReportWizardPrototype
 						Title = "Configure JSON File connection",
 						PasswordVisible = false,
 						PathLabelText = "File path:",
-						TestConnectionVisible = false,						
+						TestConnectionVisible = false,
 						ConfigConnectionStringEnabled = false
 					};
 					jsonFileConn.OnNextClicked += (sender, args) =>
@@ -219,6 +223,10 @@ namespace ReportWizardPrototype
 					};
 					jsonFileConn.ShowDialog(this);
 					break;
+				case DataSource.CSVFile:
+					var csvConnection = new CSVConnection();
+					csvConnection.ShowDialog(this);
+					break;
 			}
 			Close();
 		}
@@ -232,7 +240,8 @@ namespace ReportWizardPrototype
 		PostgreSQL,
 		SQLite,
 		ExcelFile,
-		JSONFile
+		JSONFile,
+		CSVFile
 
 	}
 }

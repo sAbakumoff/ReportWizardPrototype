@@ -94,6 +94,7 @@
 			// 
 			// gridAdvancedOptions
 			// 
+			gridAdvancedOptions.BackgroundColor = SystemColors.ControlLight;
 			gridAdvancedOptions.BorderStyle = BorderStyle.None;
 			gridAdvancedOptions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			gridAdvancedOptions.Columns.AddRange(new DataGridViewColumn[] { OptionName, OptionValue, Variable });

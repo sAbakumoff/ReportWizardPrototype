@@ -236,7 +236,7 @@
 			MaximizeBox = false;
 			MinimizeBox = false;
 			Name = "DataSourceType";
-			StartPosition = FormStartPosition.CenterScreen;
+			StartPosition = FormStartPosition.CenterParent;
 			Text = "New Report";
 			groupFile.ResumeLayout(false);
 			groupFile.PerformLayout();
