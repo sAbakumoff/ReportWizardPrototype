@@ -61,6 +61,7 @@
 			// 
 			label6.AutoSize = true;
 			label6.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+			label6.ForeColor = SystemColors.ControlText;
 			label6.Location = new Point(18, 22);
 			label6.Name = "label6";
 			label6.Size = new Size(268, 19);
@@ -126,7 +127,7 @@
 			// ParamValue
 			// 
 			ParamValue.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-			ParamValue.HeaderText = "Default Value";
+			ParamValue.HeaderText = "Testing Value";
 			ParamValue.Name = "ParamValue";
 			// 
 			// paramInputSource
@@ -146,6 +147,7 @@
 			Controls.Add(panel1);
 			Controls.Add(label6);
 			Controls.Add(dataGridView1);
+			Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
 			FormBorderStyle = FormBorderStyle.FixedDialog;
 			MaximizeBox = false;
 			MinimizeBox = false;

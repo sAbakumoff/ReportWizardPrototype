@@ -73,8 +73,12 @@ namespace ReportWizardPrototype
 		{
 			Hide();
 			var dataSetDialog = new WebAPIDataSets();
+			dataSetDialog.OnBackClicked += (sender, args) =>
+			{
+				Show();
+			};
 			dataSetDialog.ShowDialog(this);
-			Close();
+			// Close();
 		}
 
 		private async void btnTestRequest_Click(object sender, EventArgs e)

@@ -3,6 +3,7 @@
 	public partial class WebAPIDataSets : Form
 	{
 		private int _counter = 2;
+		public event EventHandler OnBackClicked;
 		public WebAPIDataSets()
 		{
 			InitializeComponent();
@@ -18,8 +19,12 @@
 		private void btnBack_Click(object sender, EventArgs e)
 		{
 			Hide();
-			var connDialog = new WebAPIConnection();
-			connDialog.ShowDialog(this);
+			// var connDialog = new WebAPIConnection();
+			// connDialog.ShowDialog(this);
+			if(this.OnBackClicked != null)
+			{
+				OnBackClicked(this, EventArgs.Empty);
+			}
 			Close();
 		}
 

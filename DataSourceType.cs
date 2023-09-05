@@ -69,6 +69,10 @@ namespace ReportWizardPrototype
 			tableLayoutFile.Controls.Add(json);
 			tableLayoutFile.SetRow(json, 0);
 			tableLayoutFile.SetColumn(json, 1);
+			json.OnClick += (sender, args) =>
+			{
+				_selectedDataSource = DataSource.JSONFile;
+			};
 
 			var xml = BuildItem("ReportWizardPrototype.Resources.XML_small.png", "XML");
 			tableLayoutFile.Controls.Add(xml);
@@ -194,6 +198,27 @@ namespace ReportWizardPrototype
 					};
 					excelConn.ShowDialog(this);
 					break;
+				case DataSource.JSONFile:
+					var jsonFileConn = new FileConnection
+					{
+						Title = "Configure JSON File connection",
+						PasswordVisible = false,
+						PathLabelText = "File path:",
+						TestConnectionVisible = false,						
+						ConfigConnectionStringEnabled = false
+					};
+					jsonFileConn.OnNextClicked += (sender, args) =>
+					{
+						jsonFileConn.Hide();
+						var jsonFileDataSets = new WebAPIDataSets();
+						jsonFileDataSets.OnBackClicked += (sender, args) =>
+						{
+							jsonFileConn.Show();
+						};
+						jsonFileDataSets.ShowDialog(this);
+					};
+					jsonFileConn.ShowDialog(this);
+					break;
 			}
 			Close();
 		}
@@ -206,7 +231,8 @@ namespace ReportWizardPrototype
 		MYSQL,
 		PostgreSQL,
 		SQLite,
-		ExcelFile
+		ExcelFile,
+		JSONFile
 
 	}
 }
