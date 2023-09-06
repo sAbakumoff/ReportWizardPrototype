@@ -1,10 +1,10 @@
 ﻿namespace ReportWizardPrototype
 {
-	public partial class WebAPIDataSets : Form
+	public partial class XMLDataSets : Form
 	{
 		private int _counter = 2;
 		public event EventHandler OnBackClicked;
-		public WebAPIDataSets()
+		public XMLDataSets()
 		{
 			InitializeComponent();
 			this.listBox1.SelectedIndex = 0;
@@ -22,7 +22,7 @@
 			Hide();
 			// var connDialog = new WebAPIConnection();
 			// connDialog.ShowDialog(this);
-			if(this.OnBackClicked != null)
+			if (this.OnBackClicked != null)
 			{
 				OnBackClicked(this, EventArgs.Empty);
 			}

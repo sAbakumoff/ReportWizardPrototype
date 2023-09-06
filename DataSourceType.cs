@@ -82,6 +82,10 @@ namespace ReportWizardPrototype
 			tableLayoutFile.Controls.Add(xml);
 			tableLayoutFile.SetRow(xml, 0);
 			tableLayoutFile.SetColumn(xml, 2);
+			xml.OnClick += (sender, args) =>
+			{
+				_selectedDataSource = DataSource.XMLFile;
+			};
 
 			var xls = BuildItem("ReportWizardPrototype.Resources.XLS_small.png", "Excel");
 			tableLayoutFile.Controls.Add(xls);
@@ -227,6 +231,20 @@ namespace ReportWizardPrototype
 					var csvConnection = new CSVConnection();
 					csvConnection.ShowDialog(this);
 					break;
+				case DataSource.XMLFile: 
+					var xmlConnection = new XMLConnection();
+					xmlConnection.OnNextClicked += (sender, args) =>
+					{
+						xmlConnection.Hide();
+						var xmlDataSets = new XMLDataSets();
+						xmlDataSets.OnBackClicked += (sender, args) =>
+						{
+							xmlConnection.Show();
+						};
+						xmlDataSets.ShowDialog(this);
+					};
+					xmlConnection.ShowDialog(this);
+					break;
 			}
 			Close();
 		}
@@ -241,7 +259,8 @@ namespace ReportWizardPrototype
 		SQLite,
 		ExcelFile,
 		JSONFile,
-		CSVFile
+		CSVFile,
+		XMLFile
 
 	}
 }
