@@ -61,5 +61,12 @@
 				this.textBox2.Text = this.listBox1.SelectedItems[0].ToString();
 			}
 		}
+
+		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			var paramsDlg = new Parameters();
+			paramsDlg.ShowDialog(this);
+
+		}
 	}
 }

@@ -28,14 +28,14 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			TreeNode treeNode1 = new TreeNode("OrderID");
-			TreeNode treeNode2 = new TreeNode("CustomerID");
-			TreeNode treeNode3 = new TreeNode("Product");
-			TreeNode treeNode4 = new TreeNode("Quantity");
-			TreeNode treeNode5 = new TreeNode("Item", new TreeNode[] { treeNode3, treeNode4 });
-			TreeNode treeNode6 = new TreeNode("Order Items", new TreeNode[] { treeNode5 });
-			TreeNode treeNode7 = new TreeNode("Order", new TreeNode[] { treeNode1, treeNode2, treeNode6 });
-			TreeNode treeNode8 = new TreeNode("Orders", new TreeNode[] { treeNode7 });
+			TreeNode treeNode9 = new TreeNode("OrderID");
+			TreeNode treeNode10 = new TreeNode("CustomerID");
+			TreeNode treeNode11 = new TreeNode("Product");
+			TreeNode treeNode12 = new TreeNode("Quantity");
+			TreeNode treeNode13 = new TreeNode("Item", new TreeNode[] { treeNode11, treeNode12 });
+			TreeNode treeNode14 = new TreeNode("Order Items", new TreeNode[] { treeNode13 });
+			TreeNode treeNode15 = new TreeNode("Order", new TreeNode[] { treeNode9, treeNode10, treeNode14 });
+			TreeNode treeNode16 = new TreeNode("Orders", new TreeNode[] { treeNode15 });
 			panel1 = new Panel();
 			btnCancel = new Button();
 			btnBack = new Button();
@@ -50,6 +50,7 @@
 			label2 = new Label();
 			label3 = new Label();
 			textBox1 = new TextBox();
+			linkLabel1 = new LinkLabel();
 			panel1.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -157,23 +158,23 @@
 			// 
 			treeView1.Location = new Point(299, 80);
 			treeView1.Name = "treeView1";
-			treeNode1.Name = "Node4";
-			treeNode1.Text = "OrderID";
-			treeNode2.Name = "Node5";
-			treeNode2.Text = "CustomerID";
-			treeNode3.Name = "Node9";
-			treeNode3.Text = "Product";
-			treeNode4.Name = "Node10";
-			treeNode4.Text = "Quantity";
-			treeNode5.Name = "Node3";
-			treeNode5.Text = "Item";
-			treeNode6.Name = "Node2";
-			treeNode6.Text = "Order Items";
-			treeNode7.Name = "Node1";
-			treeNode7.Text = "Order";
-			treeNode8.Name = "Node0";
-			treeNode8.Text = "Orders";
-			treeView1.Nodes.AddRange(new TreeNode[] { treeNode8 });
+			treeNode9.Name = "Node4";
+			treeNode9.Text = "OrderID";
+			treeNode10.Name = "Node5";
+			treeNode10.Text = "CustomerID";
+			treeNode11.Name = "Node9";
+			treeNode11.Text = "Product";
+			treeNode12.Name = "Node10";
+			treeNode12.Text = "Quantity";
+			treeNode13.Name = "Node3";
+			treeNode13.Text = "Item";
+			treeNode14.Name = "Node2";
+			treeNode14.Text = "Order Items";
+			treeNode15.Name = "Node1";
+			treeNode15.Text = "Order";
+			treeNode16.Name = "Node0";
+			treeNode16.Text = "Orders";
+			treeView1.Nodes.AddRange(new TreeNode[] { treeNode16 });
 			treeView1.Size = new Size(350, 270);
 			treeView1.TabIndex = 48;
 			// 
@@ -203,12 +204,24 @@
 			textBox1.TabIndex = 51;
 			textBox1.Text = "Orders/Order";
 			// 
+			// linkLabel1
+			// 
+			linkLabel1.AutoSize = true;
+			linkLabel1.Location = new Point(547, 389);
+			linkLabel1.Name = "linkLabel1";
+			linkLabel1.Size = new Size(102, 15);
+			linkLabel1.TabIndex = 52;
+			linkLabel1.TabStop = true;
+			linkLabel1.Text = "Insert Parameter...";
+			linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+			// 
 			// XMLDataSets
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = SystemColors.ControlLightLight;
 			ClientSize = new Size(661, 522);
+			Controls.Add(linkLabel1);
 			Controls.Add(textBox1);
 			Controls.Add(label3);
 			Controls.Add(label2);
@@ -247,5 +260,6 @@
 		private Label label2;
 		private Label label3;
 		private TextBox textBox1;
+		private LinkLabel linkLabel1;
 	}
 }
