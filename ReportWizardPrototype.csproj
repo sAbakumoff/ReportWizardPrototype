@@ -47,6 +47,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="ObjectConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ObjectDataSets.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="XMLDataSets.cs">
       <SubType>Form</SubType>
     </Compile>

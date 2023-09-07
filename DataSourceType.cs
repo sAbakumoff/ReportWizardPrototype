@@ -108,7 +108,10 @@ namespace ReportWizardPrototype
 			tableLayoutProgrammatic.Controls.Add(objectDs);
 			tableLayoutProgrammatic.SetRow(jsonAPI, 0);
 			tableLayoutProgrammatic.SetColumn(jsonAPI, 0);
-
+			objectDs.OnClick += (sender, args) =>
+			{
+				this._selectedDataSource = DataSource.Programmatic;
+			};
 		}
 
 
@@ -245,6 +248,20 @@ namespace ReportWizardPrototype
 					};
 					xmlConnection.ShowDialog(this);
 					break;
+				case DataSource.Programmatic:
+					var objectConn = new ObjectConnection();
+					objectConn.OnNextClicked += (sender, args) =>
+					{
+						objectConn.Hide();
+						var objectDataSets = new ObjectDataSets();
+						objectDataSets.OnBackClicked += (sender, args) =>
+						{
+							objectConn.Show();
+						};
+						objectDataSets.ShowDialog(this);
+					};
+					objectConn.ShowDialog(this);
+					break;
 			}
 			Close();
 		}
@@ -260,7 +277,7 @@ namespace ReportWizardPrototype
 		ExcelFile,
 		JSONFile,
 		CSVFile,
-		XMLFile
-
+		XMLFile,
+		Programmatic
 	}
 }
