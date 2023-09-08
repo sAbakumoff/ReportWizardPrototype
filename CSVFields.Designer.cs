@@ -91,7 +91,7 @@
 			btnFinish.Name = "btnFinish";
 			btnFinish.Size = new Size(75, 23);
 			btnFinish.TabIndex = 1;
-			btnFinish.Text = "Finish > >";
+			btnFinish.Text = "Next >";
 			btnFinish.UseVisualStyleBackColor = true;
 			btnFinish.Click += btnFinish_Click;
 			// 

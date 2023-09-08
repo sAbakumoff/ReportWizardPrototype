@@ -23,6 +23,8 @@
     <None Remove="Resources\rdlx.png" />
     <None Remove="Resources\section.png" />
     <None Remove="Resources\sqlite_small.png" />
+    <None Remove="Resources\summary.rtf" />
+    <None Remove="Resources\summary_object.rtf" />
     <None Remove="Resources\XLS_small.png" />
     <None Remove="Resources\XML_small.png" />
   </ItemGroup>
@@ -42,6 +44,8 @@
     <EmbeddedResource Include="Resources\rdlx.png" />
     <EmbeddedResource Include="Resources\section.png" />
     <EmbeddedResource Include="Resources\sqlite_small.png" />
+    <EmbeddedResource Include="Resources\summary.rtf" />
+    <EmbeddedResource Include="Resources\summary_object.rtf" />
     <EmbeddedResource Include="Resources\XLS_small.png" />
     <EmbeddedResource Include="Resources\XML_small.png" />
   </ItemGroup>
@@ -51,6 +55,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ObjectDataSets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="InformationDlg.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="XMLDataSets.cs">

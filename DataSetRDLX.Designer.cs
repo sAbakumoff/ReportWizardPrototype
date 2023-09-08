@@ -84,8 +84,9 @@
 			btnNext.Name = "btnNext";
 			btnNext.Size = new Size(75, 23);
 			btnNext.TabIndex = 30;
-			btnNext.Text = "Finish >>";
+			btnNext.Text = "Next >";
 			btnNext.UseVisualStyleBackColor = true;
+			btnNext.Click += btnNext_Click;
 			// 
 			// label6
 			// 

@@ -31,7 +31,14 @@
 
 		private void btnFinish_Click(object sender, EventArgs e)
 		{
-			Application.Exit();
+			Hide();
+			var information = new InformationDlg("ReportWizardPrototype.Resources.summary.rtf");
+			information.BackClicked += (sender, e) =>
+			{
+				information.Hide();
+				Show();
+			};
+			information.ShowDialog(this);
 		}
 
 

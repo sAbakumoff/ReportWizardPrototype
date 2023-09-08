@@ -17,7 +17,7 @@ namespace ReportWizardPrototype
 			this.Hide();
 			//var connDialog = new VSMSSQLConnection();
 			//connDialog.ShowDialog(this);
-			if(this.OnBack != null)
+			if (this.OnBack != null)
 			{
 				OnBack(this, EventArgs.Empty);
 			}
@@ -83,6 +83,18 @@ namespace ReportWizardPrototype
 				MessageBox.Show("Query executed successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 
+		}
+
+		private void btnNext_Click(object sender, EventArgs e)
+		{
+			Hide();
+			var information = new InformationDlg("ReportWizardPrototype.Resources.summary.rtf");
+			information.BackClicked += (sender, e) =>
+			{
+				information.Hide();
+				Show();
+			};
+			information.ShowDialog(this);
 		}
 	}
 }

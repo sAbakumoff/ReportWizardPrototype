@@ -28,15 +28,15 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			TreeNode treeNode10 = new TreeNode("ProductName");
-			TreeNode treeNode11 = new TreeNode("Unit Price");
-			TreeNode treeNode12 = new TreeNode("[*]", new TreeNode[] { treeNode10, treeNode11 });
-			TreeNode treeNode13 = new TreeNode("Products", new TreeNode[] { treeNode12 });
-			TreeNode treeNode14 = new TreeNode("CustomerID");
-			TreeNode treeNode15 = new TreeNode("CompanyName");
-			TreeNode treeNode16 = new TreeNode("[*]", new TreeNode[] { treeNode14, treeNode15 });
-			TreeNode treeNode17 = new TreeNode("Customers", new TreeNode[] { treeNode16 });
-			TreeNode treeNode18 = new TreeNode("$", new TreeNode[] { treeNode13, treeNode17 });
+			TreeNode treeNode1 = new TreeNode("ProductName");
+			TreeNode treeNode2 = new TreeNode("Unit Price");
+			TreeNode treeNode3 = new TreeNode("[*]", new TreeNode[] { treeNode1, treeNode2 });
+			TreeNode treeNode4 = new TreeNode("Products", new TreeNode[] { treeNode3 });
+			TreeNode treeNode5 = new TreeNode("CustomerID");
+			TreeNode treeNode6 = new TreeNode("CompanyName");
+			TreeNode treeNode7 = new TreeNode("[*]", new TreeNode[] { treeNode5, treeNode6 });
+			TreeNode treeNode8 = new TreeNode("Customers", new TreeNode[] { treeNode7 });
+			TreeNode treeNode9 = new TreeNode("$", new TreeNode[] { treeNode4, treeNode8 });
 			panel1 = new Panel();
 			btnCancel = new Button();
 			btnBack = new Button();
@@ -93,7 +93,7 @@
 			btnFinish.Name = "btnFinish";
 			btnFinish.Size = new Size(75, 23);
 			btnFinish.TabIndex = 30;
-			btnFinish.Text = "Finish >>";
+			btnFinish.Text = "Next >";
 			btnFinish.UseVisualStyleBackColor = true;
 			btnFinish.Click += btnFinish_Click;
 			// 
@@ -159,25 +159,25 @@
 			// 
 			treeView1.Location = new Point(299, 80);
 			treeView1.Name = "treeView1";
-			treeNode10.Name = "Node3";
-			treeNode10.Text = "ProductName";
-			treeNode11.Name = "Node4";
-			treeNode11.Text = "Unit Price";
-			treeNode12.Name = "Node2";
-			treeNode12.Text = "[*]";
-			treeNode13.Name = "Node1";
-			treeNode13.Text = "Products";
-			treeNode14.Name = "Node7";
-			treeNode14.Text = "CustomerID";
-			treeNode15.Name = "Node8";
-			treeNode15.Text = "CompanyName";
-			treeNode16.Name = "Node6";
-			treeNode16.Text = "[*]";
-			treeNode17.Name = "Node5";
-			treeNode17.Text = "Customers";
-			treeNode18.Name = "Node0";
-			treeNode18.Text = "$";
-			treeView1.Nodes.AddRange(new TreeNode[] { treeNode18 });
+			treeNode1.Name = "Node3";
+			treeNode1.Text = "ProductName";
+			treeNode2.Name = "Node4";
+			treeNode2.Text = "Unit Price";
+			treeNode3.Name = "Node2";
+			treeNode3.Text = "[*]";
+			treeNode4.Name = "Node1";
+			treeNode4.Text = "Products";
+			treeNode5.Name = "Node7";
+			treeNode5.Text = "CustomerID";
+			treeNode6.Name = "Node8";
+			treeNode6.Text = "CompanyName";
+			treeNode7.Name = "Node6";
+			treeNode7.Text = "[*]";
+			treeNode8.Name = "Node5";
+			treeNode8.Text = "Customers";
+			treeNode9.Name = "Node0";
+			treeNode9.Text = "$";
+			treeView1.Nodes.AddRange(new TreeNode[] { treeNode9 });
 			treeView1.Size = new Size(350, 270);
 			treeView1.TabIndex = 48;
 			// 

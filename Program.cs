@@ -23,7 +23,7 @@ namespace ReportWizardPrototype
 	{
 		public static bool IsRDLX = true;
 		public static bool VSNETUI = true;
-		public static bool ConnectionError = true;
+		public static bool ConnectionError = false;
 		public static bool QueryError = true;
 	}
 }

@@ -29,8 +29,14 @@
 
 		private void OnNext(object sender, EventArgs e)
 		{
-			// TODO: Info dialog
-			// Application.Exit();
+			Hide();
+			var information = new InformationDlg("ReportWizardPrototype.Resources.summary_object.rtf");
+			information.BackClicked += (sender, e) =>
+			{
+				information.Hide();
+				Show();
+			};
+			information.ShowDialog(this);
 		}
 
 		private void btnCancel_Click(object sender, EventArgs e)
