@@ -32,7 +32,9 @@
 		private void btnFinish_Click(object sender, EventArgs e)
 		{
 			Hide();
-			var information = new InformationDlg("ReportWizardPrototype.Resources.summary.rtf");
+			var summaryInfo = PrototypeSettings.VSNETUI ? "ReportWizardPrototype.Resources.summary.rtf" : "ReportWizardPrototype.Resources.summary_eud.rtf";
+			var information = new InformationDlg(summaryInfo);
+
 			information.BackClicked += (sender, e) =>
 			{
 				information.Hide();
