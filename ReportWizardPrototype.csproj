@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Chart.png" />
     <None Remove="Resources\CSV_small.png" />
     <None Remove="Resources\dashboard.png" />
     <None Remove="Resources\json_api_small.png" />
@@ -26,11 +27,14 @@
     <None Remove="Resources\summary.rtf" />
     <None Remove="Resources\summary_eud.rtf" />
     <None Remove="Resources\summary_object.rtf" />
+    <None Remove="Resources\Table.png" />
+    <None Remove="Resources\Tablix.png" />
     <None Remove="Resources\XLS_small.png" />
     <None Remove="Resources\XML_small.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Chart.png" />
     <EmbeddedResource Include="Resources\CSV_small.png" />
     <EmbeddedResource Include="Resources\dashboard.png" />
     <EmbeddedResource Include="Resources\json_api_small.png" />
@@ -48,11 +52,25 @@
     <EmbeddedResource Include="Resources\summary.rtf" />
     <EmbeddedResource Include="Resources\summary_eud.rtf" />
     <EmbeddedResource Include="Resources\summary_object.rtf" />
+    <EmbeddedResource Include="Resources\Table.png" />
+    <EmbeddedResource Include="Resources\Tablix.png" />
     <EmbeddedResource Include="Resources\XLS_small.png" />
     <EmbeddedResource Include="Resources\XML_small.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="DataRegions\TableGroupings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DataRegions\TableFields.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DataRegions\NewDataRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="WelcomeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ObjectConnection.cs">
       <SubType>Form</SubType>
     </Compile>
