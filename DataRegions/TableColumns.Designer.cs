@@ -1,6 +1,6 @@
 ﻿namespace ReportWizardPrototype
 {
-    partial class TableGroupings
+    partial class TableColumns
     {
         /// <summary>
         /// Required designer variable.
@@ -36,10 +36,7 @@
             lblTitle = new Label();
             btnMoveUp = new Button();
             btnMoveDown = new Button();
-            button2 = new Button();
-            button1 = new Button();
             listBox1 = new ListBox();
-            comboBox1 = new ComboBox();
             label2 = new Label();
             checkBox1 = new CheckBox();
             checkBox2 = new CheckBox();
@@ -47,8 +44,14 @@
             checkBox4 = new CheckBox();
             checkBox5 = new CheckBox();
             label1 = new Label();
-            comboBox2 = new ComboBox();
+            textBox2 = new TextBox();
+            comboBox1 = new ComboBox();
             label3 = new Label();
+            comboBox2 = new ComboBox();
+            label4 = new Label();
+            comboBox3 = new ComboBox();
+            label5 = new Label();
+            checkBox6 = new CheckBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -115,9 +118,9 @@
             lblTitle.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lblTitle.Location = new Point(18, 9);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(171, 19);
+            lblTitle.Size = new Size(161, 19);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "Configure Table Groupings";
+            lblTitle.Text = "Configure Table Columns";
             // 
             // btnMoveUp
             // 
@@ -137,152 +140,184 @@
             btnMoveDown.Text = "Down\\";
             btnMoveDown.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            button2.Location = new Point(132, 416);
-            button2.Name = "button2";
-            button2.Size = new Size(104, 23);
-            button2.TabIndex = 56;
-            button2.Text = "Remove";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(18, 416);
-            button1.Name = "button1";
-            button1.Size = new Size(108, 23);
-            button1.TabIndex = 55;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Items.AddRange(new object[] { "Country" });
+            listBox1.Items.AddRange(new object[] { "FullName", "CompanyName", "Address", "Income", "Gender" });
             listBox1.Location = new Point(18, 46);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(218, 364);
+            listBox1.Size = new Size(218, 394);
             listBox1.TabIndex = 54;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Country", "City", "FullName", "CompanyName" });
-            comboBox1.Location = new Point(372, 46);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(277, 23);
-            comboBox1.TabIndex = 58;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(307, 49);
             label2.Name = "label2";
-            label2.Size = new Size(59, 15);
+            label2.Size = new Size(72, 15);
             label2.TabIndex = 57;
-            label2.Text = "Group By:";
+            label2.Text = "Header Text:";
             // 
             // checkBox1
             // 
             checkBox1.Checked = true;
             checkBox1.CheckState = CheckState.Checked;
             checkBox1.FlatStyle = FlatStyle.System;
-            checkBox1.Location = new Point(372, 127);
+            checkBox1.Location = new Point(385, 210);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(277, 20);
+            checkBox1.Size = new Size(57, 20);
             checkBox1.TabIndex = 59;
-            checkBox1.Text = "Include Group Header";
+            checkBox1.Text = "Sum";
             // 
             // checkBox2
             // 
             checkBox2.Checked = true;
             checkBox2.CheckState = CheckState.Checked;
             checkBox2.FlatStyle = FlatStyle.System;
-            checkBox2.Location = new Point(372, 153);
+            checkBox2.Location = new Point(385, 236);
             checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(277, 20);
+            checkBox2.Size = new Size(80, 20);
             checkBox2.TabIndex = 60;
-            checkBox2.Text = "Repeat Group Header on each page";
+            checkBox2.Text = "Count";
             // 
             // checkBox3
             // 
             checkBox3.Checked = true;
             checkBox3.CheckState = CheckState.Checked;
             checkBox3.FlatStyle = FlatStyle.System;
-            checkBox3.Location = new Point(372, 179);
+            checkBox3.Location = new Point(465, 236);
             checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(277, 20);
+            checkBox3.Size = new Size(102, 20);
             checkBox3.TabIndex = 61;
-            checkBox3.Text = "Include Group Footer";
+            checkBox3.Text = "Average";
             // 
             // checkBox4
             // 
             checkBox4.Checked = true;
             checkBox4.CheckState = CheckState.Checked;
             checkBox4.FlatStyle = FlatStyle.System;
-            checkBox4.Location = new Point(372, 205);
+            checkBox4.Location = new Point(385, 262);
             checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(277, 20);
+            checkBox4.Size = new Size(57, 20);
             checkBox4.TabIndex = 62;
-            checkBox4.Text = "Repeat Group Footer on each page";
+            checkBox4.Text = "Min";
             // 
             // checkBox5
             // 
             checkBox5.Checked = true;
             checkBox5.CheckState = CheckState.Checked;
             checkBox5.FlatStyle = FlatStyle.System;
-            checkBox5.Location = new Point(372, 231);
+            checkBox5.Location = new Point(465, 262);
             checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(277, 20);
+            checkBox5.Size = new Size(87, 20);
             checkBox5.TabIndex = 63;
-            checkBox5.Text = "Start each group on a new page";
+            checkBox5.Text = "Max";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(307, 129);
+            label1.Location = new Point(307, 212);
             label1.Name = "label1";
-            label1.Size = new Size(46, 15);
+            label1.Size = new Size(69, 15);
             label1.TabIndex = 64;
-            label1.Text = "Layout:";
+            label1.Text = "Summaries:";
             // 
-            // comboBox2
+            // textBox2
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "None", "Ascending", "Descending" });
-            comboBox2.Location = new Point(372, 87);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(277, 23);
-            comboBox2.TabIndex = 66;
+            textBox2.Location = new Point(385, 45);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(264, 24);
+            textBox2.TabIndex = 65;
+            textBox2.Text = "Full Name";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "General", "Left", "Center", "Right" });
+            comboBox1.Location = new Point(385, 86);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(264, 23);
+            comboBox1.TabIndex = 67;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(307, 90);
+            label3.Location = new Point(307, 89);
             label3.Name = "label3";
-            label3.Size = new Size(48, 15);
-            label3.TabIndex = 65;
-            label3.Text = "Sorting:";
+            label3.Size = new Size(66, 15);
+            label3.TabIndex = 66;
+            label3.Text = "Alignment:";
             // 
-            // TableGroupings
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "General", "Currency", "Decimal", "Percent", "Short Date", "Long Date" });
+            comboBox2.Location = new Point(385, 128);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(264, 23);
+            comboBox2.TabIndex = 69;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(307, 131);
+            label4.Name = "label4";
+            label4.Size = new Size(48, 15);
+            label4.TabIndex = 68;
+            label4.Text = "Format:";
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "None", "Ascending", "Descending" });
+            comboBox3.Location = new Point(384, 169);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(265, 23);
+            comboBox3.TabIndex = 71;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(307, 172);
+            label5.Name = "label5";
+            label5.Size = new Size(48, 15);
+            label5.TabIndex = 70;
+            label5.Text = "Sorting:";
+            // 
+            // checkBox6
+            // 
+            checkBox6.Checked = true;
+            checkBox6.CheckState = CheckState.Checked;
+            checkBox6.FlatStyle = FlatStyle.System;
+            checkBox6.Location = new Point(465, 210);
+            checkBox6.Name = "checkBox6";
+            checkBox6.Size = new Size(103, 20);
+            checkBox6.TabIndex = 72;
+            checkBox6.Text = "Distinct Sum";
+            // 
+            // TableColumns
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(661, 522);
+            Controls.Add(checkBox6);
+            Controls.Add(comboBox3);
+            Controls.Add(label5);
             Controls.Add(comboBox2);
+            Controls.Add(label4);
+            Controls.Add(comboBox1);
             Controls.Add(label3);
+            Controls.Add(textBox2);
             Controls.Add(label1);
             Controls.Add(checkBox5);
             Controls.Add(checkBox4);
             Controls.Add(checkBox3);
             Controls.Add(checkBox2);
             Controls.Add(checkBox1);
-            Controls.Add(comboBox1);
             Controls.Add(label2);
-            Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(listBox1);
             Controls.Add(btnMoveDown);
             Controls.Add(btnMoveUp);
@@ -291,7 +326,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "TableGroupings";
+            Name = "TableColumns";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "New Report";
@@ -311,12 +346,9 @@
         private Button btnBack;
         private ListView listView2;
         private ColumnHeader columnHeader1;
-        private Button button1;
         private Button btnMoveDown;
         private Button btnMoveUp;
-        private Button button2;
         private ListBox listBox1;
-        private ComboBox comboBox1;
         private Label label2;
         private CheckBox checkBox1;
         private CheckBox checkBox2;
@@ -324,7 +356,13 @@
         private CheckBox checkBox4;
         private CheckBox checkBox5;
         private Label label1;
-        private ComboBox comboBox2;
+        private TextBox textBox2;
+        private ComboBox comboBox1;
         private Label label3;
+        private ComboBox comboBox2;
+        private Label label4;
+        private ComboBox comboBox3;
+        private Label label5;
+        private CheckBox checkBox6;
     }
 }

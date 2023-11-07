@@ -13,8 +13,10 @@ namespace ReportWizardPrototype
 			// To customize application configuration such as set high DPI settings or default font,
 			// see https://aka.ms/applicationconfiguration.
 			ApplicationConfiguration.Initialize();
-			var dsType = new NewReport();
-			dsType.Show();
+			//var dsType = new NewReport();
+			//dsType.Show();
+			var dataRegionWizard = new NewDataRegion();
+			dataRegionWizard.Show();
 			Application.Run();
 		}
 	}
@@ -22,7 +24,7 @@ namespace ReportWizardPrototype
 	internal static class PrototypeSettings
 	{
 		public static bool IsRDLX = true;
-		public static bool VSNETUI = true;
+		public static bool VSNETUI = false;
 		public static bool ConnectionError = false;
 		public static bool QueryError = true;
 	}

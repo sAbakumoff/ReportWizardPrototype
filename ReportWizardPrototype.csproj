@@ -59,6 +59,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="DataRegions\TableColumns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DataRegions\ReportTheme.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="DataRegions\TableGroupings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="DataRegions\NewDataRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DataRegions\PageSettings.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="WelcomeScreen.cs">

@@ -10,22 +10,22 @@ using System.Windows.Forms;
 
 namespace ReportWizardPrototype
 {
-	public partial class MSSQLAdvancedProps : Form
-	{
-		public MSSQLAdvancedProps()
-		{
-			InitializeComponent();
-			this.gridAdvancedOptions.Rows.Add("Timeout", "3000");
-		}
+    public partial class MSSQLAdvancedProps : Form
+    {
+        public MSSQLAdvancedProps()
+        {
+            InitializeComponent();
+            // this.gridAdvancedOptions.Rows.Add("Timeout", "3000");
+        }
 
-		private void button2_Click(object sender, EventArgs e)
-		{
-			this.Close();
-		}
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
-		private void button1_Click(object sender, EventArgs e)
-		{
-			this.Close();
-		}
-	}
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
 }
