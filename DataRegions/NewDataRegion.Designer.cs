@@ -35,12 +35,14 @@
             btnFinish = new Button();
             label6 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
+            button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.Control;
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(btnHelp);
             panel1.Controls.Add(btnCancel);
             panel1.Controls.Add(btnNext);
@@ -115,6 +117,15 @@
             tableLayoutPanel1.Size = new Size(631, 177);
             tableLayoutPanel1.TabIndex = 51;
             // 
+            // button1
+            // 
+            button1.Location = new Point(331, 18);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 40;
+            button1.Text = "< Back";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // NewDataRegion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -145,5 +156,6 @@
         private Label label6;
         private TableLayoutPanel tableLayoutPanel1;
         private Button btnHelp;
+        private Button button1;
     }
 }

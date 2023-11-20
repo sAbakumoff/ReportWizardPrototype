@@ -38,6 +38,8 @@
             groupAuth = new GroupBox();
             _iconBox = new PictureBox();
             groupBox1 = new GroupBox();
+            comboBox2 = new ComboBox();
+            label5 = new Label();
             textBox1 = new TextBox();
             label4 = new Label();
             textBox2 = new TextBox();
@@ -48,11 +50,9 @@
             comboBox1 = new ComboBox();
             label3 = new Label();
             groupBox2 = new GroupBox();
-            comboBox2 = new ComboBox();
-            label5 = new Label();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
             checkBox3 = new CheckBox();
+            checkBox2 = new CheckBox();
+            checkBox1 = new CheckBox();
             checkBox4 = new CheckBox();
             checkBox5 = new CheckBox();
             panel1.SuspendLayout();
@@ -134,7 +134,7 @@
             groupAuth.Controls.Add(_iconBox);
             groupAuth.Location = new Point(357, 52);
             groupAuth.Name = "groupAuth";
-            groupAuth.Size = new Size(292, 391);
+            groupAuth.Size = new Size(292, 403);
             groupAuth.TabIndex = 36;
             groupAuth.TabStop = false;
             groupAuth.Text = "Preview";
@@ -147,7 +147,7 @@
             _iconBox.Location = new Point(3, 19);
             _iconBox.Margin = new Padding(4, 3, 4, 3);
             _iconBox.Name = "_iconBox";
-            _iconBox.Size = new Size(286, 369);
+            _iconBox.Size = new Size(286, 381);
             _iconBox.SizeMode = PictureBoxSizeMode.CenterImage;
             _iconBox.TabIndex = 1;
             _iconBox.TabStop = false;
@@ -168,15 +168,34 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Location = new Point(18, 52);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(292, 222);
+            groupBox1.Size = new Size(292, 211);
             groupBox1.TabIndex = 37;
             groupBox1.TabStop = false;
             groupBox1.Text = "Paper";
             // 
+            // comboBox2
+            // 
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Normal", "Narrow", "Moderate", "Wide" });
+            comboBox2.Location = new Point(102, 181);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(184, 23);
+            comboBox2.TabIndex = 78;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(6, 184);
+            label5.Name = "label5";
+            label5.Size = new Size(53, 15);
+            label5.TabIndex = 77;
+            label5.Text = "Margins:";
+            // 
             // textBox1
             // 
             textBox1.Enabled = false;
-            textBox1.Location = new Point(102, 149);
+            textBox1.Location = new Point(102, 143);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(184, 24);
@@ -186,7 +205,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(6, 152);
+            label4.Location = new Point(6, 146);
             label4.Name = "label4";
             label4.Size = new Size(46, 15);
             label4.TabIndex = 75;
@@ -195,7 +214,7 @@
             // textBox2
             // 
             textBox2.Enabled = false;
-            textBox2.Location = new Point(102, 109);
+            textBox2.Location = new Point(102, 105);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(184, 24);
@@ -205,7 +224,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(6, 112);
+            label2.Location = new Point(6, 108);
             label2.Name = "label2";
             label2.Size = new Size(42, 15);
             label2.TabIndex = 73;
@@ -214,7 +233,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(6, 72);
+            label1.Location = new Point(6, 70);
             label1.Name = "label1";
             label1.Size = new Size(70, 15);
             label1.TabIndex = 72;
@@ -224,7 +243,7 @@
             // 
             radioButton1.AutoSize = true;
             radioButton1.Checked = true;
-            radioButton1.Location = new Point(205, 70);
+            radioButton1.Location = new Point(205, 66);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(81, 19);
             radioButton1.TabIndex = 71;
@@ -235,7 +254,7 @@
             // radioAppConfig
             // 
             radioAppConfig.AutoSize = true;
-            radioAppConfig.Location = new Point(102, 70);
+            radioAppConfig.Location = new Point(102, 66);
             radioAppConfig.Name = "radioAppConfig";
             radioAppConfig.Size = new Size(64, 19);
             radioAppConfig.TabIndex = 70;
@@ -244,6 +263,7 @@
             // 
             // comboBox1
             // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "A4", "Letter", "Legal", "Custom" });
             comboBox1.Location = new Point(102, 29);
@@ -270,28 +290,33 @@
             groupBox2.Controls.Add(checkBox1);
             groupBox2.Location = new Point(18, 280);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(292, 163);
+            groupBox2.Size = new Size(292, 175);
             groupBox2.TabIndex = 38;
             groupBox2.TabStop = false;
             groupBox2.Text = "Header and Footer";
             // 
-            // comboBox2
+            // checkBox3
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Normal", "Narrow", "Moderate", "Wide" });
-            comboBox2.Location = new Point(102, 189);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(184, 23);
-            comboBox2.TabIndex = 78;
+            checkBox3.Checked = true;
+            checkBox3.CheckState = CheckState.Checked;
+            checkBox3.FlatStyle = FlatStyle.System;
+            checkBox3.Location = new Point(6, 69);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(138, 20);
+            checkBox3.TabIndex = 62;
+            checkBox3.Text = "Show Page Numbers";
+            checkBox3.CheckedChanged += checkBox3_CheckedChanged;
             // 
-            // label5
+            // checkBox2
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(6, 192);
-            label5.Name = "label5";
-            label5.Size = new Size(53, 15);
-            label5.TabIndex = 77;
-            label5.Text = "Margins:";
+            checkBox2.Checked = true;
+            checkBox2.CheckState = CheckState.Checked;
+            checkBox2.FlatStyle = FlatStyle.System;
+            checkBox2.Location = new Point(148, 32);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(138, 20);
+            checkBox2.TabIndex = 61;
+            checkBox2.Text = "Include Page Footer";
             // 
             // checkBox1
             // 
@@ -304,49 +329,27 @@
             checkBox1.TabIndex = 60;
             checkBox1.Text = "Include Page Header";
             // 
-            // checkBox2
-            // 
-            checkBox2.Checked = true;
-            checkBox2.CheckState = CheckState.Checked;
-            checkBox2.FlatStyle = FlatStyle.System;
-            checkBox2.Location = new Point(6, 58);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(138, 20);
-            checkBox2.TabIndex = 61;
-            checkBox2.Text = "Include Page Footer";
-            // 
-            // checkBox3
-            // 
-            checkBox3.Checked = true;
-            checkBox3.CheckState = CheckState.Checked;
-            checkBox3.FlatStyle = FlatStyle.System;
-            checkBox3.Location = new Point(6, 84);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(280, 20);
-            checkBox3.TabIndex = 62;
-            checkBox3.Text = "Show Report title in Header";
-            // 
             // checkBox4
             // 
             checkBox4.Checked = true;
             checkBox4.CheckState = CheckState.Checked;
             checkBox4.FlatStyle = FlatStyle.System;
-            checkBox4.Location = new Point(6, 110);
+            checkBox4.Location = new Point(148, 69);
             checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(280, 20);
+            checkBox4.Size = new Size(138, 20);
             checkBox4.TabIndex = 63;
-            checkBox4.Text = "Show Page Numbers in Footer";
+            checkBox4.Text = "Show Current Date";
             // 
             // checkBox5
             // 
             checkBox5.Checked = true;
             checkBox5.CheckState = CheckState.Checked;
             checkBox5.FlatStyle = FlatStyle.System;
-            checkBox5.Location = new Point(6, 136);
+            checkBox5.Location = new Point(6, 106);
             checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(280, 20);
+            checkBox5.Size = new Size(138, 20);
             checkBox5.TabIndex = 64;
-            checkBox5.Text = "Show Current Date in Footer";
+            checkBox5.Text = "Show Report Name";
             // 
             // PageSettings
             // 
@@ -402,8 +405,8 @@
         private Label label5;
         private CheckBox checkBox2;
         private CheckBox checkBox1;
+        private CheckBox checkBox3;
         private CheckBox checkBox5;
         private CheckBox checkBox4;
-        private CheckBox checkBox3;
     }
 }

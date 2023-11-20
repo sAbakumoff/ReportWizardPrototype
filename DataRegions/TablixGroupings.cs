@@ -3,10 +3,10 @@ using System.Windows.Forms;
 
 namespace ReportWizardPrototype
 {
-    public partial class ReportTheme : Form
+    public partial class TablixGroupings : Form
     {
         public event EventHandler BackClicked;
-        public ReportTheme()
+        public TablixGroupings()
         {
             InitializeComponent();
 
@@ -16,8 +16,8 @@ namespace ReportWizardPrototype
         private void btnBack_Click(object sender, EventArgs e)
         {
             Hide();
-            // var dataSourceType = new TableGroupings();
-            // dataSourceType.ShowDialog(this);
+            var cols = new TableColumns();
+            cols.ShowDialog(this);
             Close();
         }
 
@@ -31,15 +31,14 @@ namespace ReportWizardPrototype
             Application.Exit();
         }
 
-        private void TableFields_Load(object sender, EventArgs e)
-        {
-            //comboBox1.SelectedIndex = 0;
-            //listBox1.SelectedIndex = 0;
-        }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void TableGroupings_Load(object sender, EventArgs e)
         {
-
+            // listView1.SelectedIndices.Add(0);
+            listBox1.SelectedIndex = 0;
+            btnMoveUp.Text = char.ConvertFromUtf32(8593);
+            btnMoveDown.Text = char.ConvertFromUtf32(8595);
+            comboBox1.SelectedIndex = comboBox2.SelectedIndex = 0;
         }
     }
 }

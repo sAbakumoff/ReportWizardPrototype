@@ -110,9 +110,9 @@
             lblTitle.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lblTitle.Location = new Point(18, 9);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(196, 19);
+            lblTitle.Size = new Size(198, 19);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "Choose Table Query and Fields";
+            lblTitle.Text = "Choose Tablix Query and Fields";
             // 
             // comboBox1
             // 

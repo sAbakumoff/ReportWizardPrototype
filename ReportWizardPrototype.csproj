@@ -59,10 +59,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="DataRegions\TablixValues.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="DataRegions\TableColumns.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="DataRegions\ReportTheme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DataRegions\TablixColumnGroupings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DataRegions\TablixGroupings.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="DataRegions\TableGroupings.cs">

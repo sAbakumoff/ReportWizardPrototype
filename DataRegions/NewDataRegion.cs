@@ -60,10 +60,10 @@ namespace ReportWizardPrototype
 
         private void OnNext(object sender, EventArgs e)
         {
-                Hide();
-                var dataSourceType = new TableFields();
-                dataSourceType.ShowDialog(this);
-                Close();
+            Hide();
+            var dataSourceType = new TableFields();
+            dataSourceType.ShowDialog(this);
+            Close();
         }
 
         private void OnHelp(object sender, EventArgs e)

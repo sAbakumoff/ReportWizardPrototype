@@ -52,7 +52,15 @@ namespace ReportWizardPrototype
 
         private void PageSettings_Load(object sender, EventArgs e)
         {
-            this.comboBox1.SelectedIndex = 0;
+            this.comboBox1.SelectedIndex = comboBox2.SelectedIndex = 0;
+            //this.cmbReportTitle.SelectedIndex = 1;
+            //this.cmbPageNumbers.SelectedIndex = 2;
+            //this.cmbCurrentDate.SelectedIndex = 2;
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
